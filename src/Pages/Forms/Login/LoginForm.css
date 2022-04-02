@@ -2,6 +2,7 @@
   top: 0px;
   position: absolute;
   left: 50%;
+  width: 300px;
   transform: translate(-50%, 0);
 
   align-items: center;
@@ -10,7 +11,29 @@
 }
 
 .logo-center img {
+  transform-origin: 50% 50%;
+  transition: transform 1s ease-in-out;
+
+  animation-duration: 2s;
+  animation-name: fadein;
+
   width: 220px;
+}
+
+.logo-center img:hover {
+  transform: rotate(0.5turn);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  to {
+    opacity: 100%;
+    width: 220px;
+  }
 }
 
 .logo-center h1 {

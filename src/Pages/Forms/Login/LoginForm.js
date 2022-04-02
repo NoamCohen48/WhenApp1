@@ -2,14 +2,15 @@ import React, { useRef } from 'react';
 
 import './LoginForm.css'
 
-import Container from '../../../Components/Container.js';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { findPerson } from '../../../db/api.js'
 
 function LoginForm(props) {
     const usernameInput = useRef();
     const passwordInput = useRef();
+
+    const navigate = useNavigate();
 
     function Login(event) {
         event.preventDefault();
@@ -19,16 +20,22 @@ function LoginForm(props) {
 
         //TODO: validation
 
-        let person = findPerson({username: username, password: password})
-        if(person.length === 1){
-            console.log('all good, login');
+        let person = findPerson({ username: username, password: password })
+        if (person.length === 1) {
+            console.log('person found, login');
+
+            let state = { username: username }
+            navigate("/register", { state: state }) // need to transfer info about who registered
         }
+
         console.log('not found');
+
+        // TODO: Show Error
     }
 
     return (
         <>
-            <Container size='small' className='c-shadow'>
+            <div className={"container-lg container-small c-shadow" } >
                 <div className='logo-center'>
                     <img src='/resources/Logo.png' alt='logo' />
                     <h1>WhenApp</h1>
@@ -48,7 +55,7 @@ function LoginForm(props) {
                     </form>
                     <p>To Register Press <Link to="register" className='link-light'>Here</Link></p>
                 </div>
-            </Container>
+            </div>
         </>
     )
 }

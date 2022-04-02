@@ -23,7 +23,7 @@
 			"import React from 'react';\n",
 			"function ${1:label}(props) {",
 			"\treturn(", 
-			"\t\t<>\n\t\t\t\n\t\t</>", 
+			"\t\t<>\n\t\t\t$0\n\t\t</>", 
 			"\t)",
 			"}\n", 
 			"export default ${1:label};"
