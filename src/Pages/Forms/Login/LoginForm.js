@@ -25,7 +25,7 @@ function LoginForm(props) {
             console.log('person found, login');
 
             let state = { username: username }
-            navigate("/register", { state: state }) // need to transfer info about who registered
+            navigate("/Chat", { state: state }) // need to transfer info about who registered
         }
 
         console.log('not found');

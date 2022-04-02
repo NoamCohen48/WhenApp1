@@ -8,7 +8,8 @@ function ChatScreen(props) {
 
     return(
         <>
-            
+            <h1>This is the Chat Room</h1>
+            <h2>user: {username}</h2>
         </>
     )
 }

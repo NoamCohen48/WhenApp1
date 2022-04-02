@@ -33,7 +33,7 @@ export function findPerson({ username, nickname, password }) {
 }
 
 // export {findPerson, registerPerson};
-// registerPerson('hello','mike','1245');
+registerPerson('admin','admin','admin');
 
 // let query = findPerson({username:'hello'})
 
