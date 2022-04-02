@@ -1,16 +1,22 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap';
 
-function App() {
-  console.log()
+import './App.css';
+import LoginForm from './Pages/Forms/Login/LoginForm.js';
+
+function App(props) {
   return (
-    <>
-      <h1>Hello World</h1>
-      <button type="button" className="btn btn-primary">Primary</button>
-      
-    </>
+    
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/register" element={<LoginForm />} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 

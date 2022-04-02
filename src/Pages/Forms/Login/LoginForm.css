@@ -1,0 +1,89 @@
+.logo-center {
+  top: 0px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.logo-center img {
+  width: 220px;
+}
+
+.logo-center h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 3.5rem;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px 1px rgba(150, 150, 150, 0.5);
+}
+
+.container-small {
+  width: 40%;
+  height: calc(100% - 350px);
+  margin: 150px auto 0 auto;
+  padding-bottom: 50px;
+
+  background-color: #006962;
+
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #01424b;
+  border-width: 3px;
+
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.container-small form {
+  width: 100%;
+  height: calc(100% - 170px - 50px);
+
+  margin: 170px auto 0px auto;
+}
+
+.container-small form .form-floating {
+  width: 60%;
+  margin: 0 auto 3em auto;
+}
+
+.container-small form .form-floating input {
+  border-style: solid;
+  border-color: #01424b;
+  border-width: 2px;
+
+  text-align: center;
+}
+
+.container-small form .form-floating label {
+  text-align: center;
+  width: 100%;
+
+  transform-origin: 50% 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.container-small button {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00504b;
+  letter-spacing: 0.25rem;
+}
+
+.container-small p {
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  margin-top: 1em;
+}
+
+.container-small .c-shadow, .container-small.c-shadow {
+  box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);
+}
