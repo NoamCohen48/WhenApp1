@@ -42,13 +42,13 @@ function LoginForm(props) {
                 </div>
 
                 <div>
-                    <form onSubmit={Login}>
+                    <form onSubmit={Login} className=''>
                         <div className="form-floating">
-                            <input type="text" className="form-control rounded-pill c-shadow" id="inputUsername" placeholder="username" ref={usernameInput} />
+                            <input type="text" className="form-control rounded-pill c-shadow" id="inputUsername" placeholder=" " ref={usernameInput} required/>
                             <label htmlFor="inputUsername">User Name</label>
                         </div>
                         <div className="form-floating">
-                            <input type="password" className="form-control rounded-pill c-shadow" id="inputPassword" placeholder="password" ref={passwordInput} />
+                            <input type="password" className="form-control rounded-pill c-shadow " id="inputPassword" placeholder=" " ref={passwordInput} required/>
                             <label htmlFor="inputPassword">Password</label>
                         </div>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">LOGIN</button>
