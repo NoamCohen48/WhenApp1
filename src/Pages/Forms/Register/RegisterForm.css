@@ -76,14 +76,15 @@
   padding: 8vh 0 0 0;
 }
 
-.register-container form .form-floating {
+/*.register-container form .form-floating {
   width: 60%;
   margin: 0 0 4vh 0;
-}
+}*/
 
-.register-container form .form-floating input {
+.register-container form input {
+  width: 60%;
+  margin: 0 0 4vh 0;
   border-width: 2px;
-  text-align: center;
   height: calc(2.5rem + 15px);
   font-size: 1.15rem;
 }
