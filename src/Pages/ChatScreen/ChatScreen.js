@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './ChatScreen.css'
-import DialogScreen from './DialogScreen';
-import SideBar from './SideBar';
+import DialogScreen from './ChatDialog/DialogScreen.js';
+import SideBar from './SideBar/SideBar.js';
 
 function ChatScreen(props) {
     let location = useLocation();
     let { username } = location.state
 
+    // TODO: change to use provider
     const [curChatWith, setCurChatWith] = useState()
 
     return (
