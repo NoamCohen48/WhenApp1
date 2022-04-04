@@ -7,7 +7,7 @@ import SideBar from './SideBar/SideBar.js';
 
 function ChatScreen(props) {
     let location = useLocation();
-    let { username } = location.state
+    let { username } = location.state;
 
     // TODO: change to use provider
     const [curChatWith, setCurChatWith] = useState()

@@ -10,9 +10,10 @@ import ChatScreen from './Pages/ChatScreen/ChatScreen';
 import LoginForm from './Pages/Forms/Login/LoginForm.js';
 import RegisterForm from './Pages/Forms/Register/RegisterForm';
 
+import './db/messages.js'
+
 function App(props) {
   return (
-    
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginForm />} />
