@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import '../Login/LoginForm.css'
 
@@ -18,6 +18,7 @@ function RegisterForm(props) {
     const avaterInput = useRef();
     const errorText = useRef();
 
+    const [file, setFile] = useState("/resources/emptyAvatar.jpg");
 
     const navigate = useNavigate();
 
@@ -53,6 +54,11 @@ function RegisterForm(props) {
         uploudButton.current.click(event);
     }
 
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
     return (
         <>
             <div className="container-lg register-container c-shadow" >
@@ -72,10 +78,10 @@ function RegisterForm(props) {
                         <input type="password" className="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput}/>
                         
                         <div className="avatar" ref={avaterInput} onClick={UploudImage}>
-                            <img src="/resources/emptyAvatar.jpg" className="rounded-3 img-fluid"
+                            <img src={file} className="rounded-3 img-fluid"
                                 alt="Avatar" />
                         </div>
-                        <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton}></input>
+                        <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton} onChange={handleChange}></input>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">Register</button>
                         <p ref={errorText} className='error'></p>
                     </form>
