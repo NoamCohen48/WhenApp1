@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
+    "\\public\\resources",
     "\\src",
     "\\src\\db",
     "\\src\\Pages",

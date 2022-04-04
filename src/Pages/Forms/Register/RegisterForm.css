@@ -73,7 +73,7 @@
 
   margin: 0 auto 0 auto;
 
-  padding: 3vh 0 0 0;
+  padding: 8vh 0 0 0;
 }
 
 .register-container form .form-floating {
@@ -103,13 +103,22 @@
 
 .register-container .avatar {
   position: absolute;
+  cursor: pointer;
   top: 30%;
   left: 68%;
   height: 20vh;
   width: 11vw;
 }
 
+
+.hidden {
+   visibility: hidden;
+}
+
 .register-container button {
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
   --btn-bg-color: #00504b;
   --btn-bg-light: #165c57;
   --btn-br-color: #093c38;

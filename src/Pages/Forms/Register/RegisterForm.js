@@ -6,7 +6,15 @@ import './RegisterForm.css'
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { findPerson ,registerPerson } from '../../../db/api.js'
+import { findPerson, registerPerson } from '../../../db/api.js'
+
+function LeftSide(props) {
+    return (
+        <>
+
+        </>
+        )
+}
 
 
 function RegisterForm(props) {
@@ -15,6 +23,9 @@ function RegisterForm(props) {
     const passwordInput = useRef();
     const confirmPasswordInput = useRef();
     const nicknameInput = useRef();
+    const uploudButton = useRef();
+    const avaterInput = useRef();
+
 
     const navigate = useNavigate();
 
@@ -25,6 +36,11 @@ function RegisterForm(props) {
         let password = passwordInput.current.value;
         let confirmPassword = confirmPasswordInput.current.value;
         let nickname = nicknameInput.current.value;
+    }
+
+    function UploudImage(event) {
+        console.log(uploudButton)
+        uploudButton.current.click(event);
     }
 
     return (
@@ -53,10 +69,11 @@ function RegisterForm(props) {
                             <input type="password" className="form-control rounded-pill c-shadow " id="inputPassword" placeholder=" " ref={passwordInput} required />
                             <label htmlFor="inputPassword">Confirm Password</label>
                         </div>
-                        <div className="avatar">
+                        <div className="avatar" ref={avaterInput} onClick={UploudImage}>
                             <img src="/resources/emptyAvatar.jpg" className="rounded-3 img-fluid"
                                 alt="Avatar" />
                         </div>
+                        <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton}></input>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">Register</button>
                     </form>
                 </div>
