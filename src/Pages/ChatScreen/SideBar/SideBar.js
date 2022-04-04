@@ -1,4 +1,5 @@
 import React from 'react';
+import SideBarItem from './SideBarItem';
 
 function SideBar(props) {
     let chatSetter = props.chatSetter;
@@ -9,15 +10,20 @@ function SideBar(props) {
 
     /*
     TODO:
-    1. create component of elemt
-    2. each has function that changes the setter
+    1. create component of items
+    2. list as column flexbox
+    3. each has function that changes the setter
     */
 
 
     return (
         <>
             this is the side bar
-            <button onClick={selectChat}>click</button>
+            <br></br>
+            <SideBarItem person={"mike"} chatSetter={chatSetter} />
+            <br></br>
+            <SideBarItem person={"jhon"} chatSetter={chatSetter} />
+
         </>
     )
 }
