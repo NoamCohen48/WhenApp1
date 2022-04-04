@@ -7,18 +7,6 @@ import './RegisterForm.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 import { findPerson, registerPerson } from '../../../db/users.js'
-<<<<<<< HEAD
-
-function LeftSide(props) {
-    return (
-        <>
-
-        </>
-    )
-}
-
-=======
->>>>>>> Shaked
 
 function RegisterForm(props) {
 
@@ -81,16 +69,6 @@ function RegisterForm(props) {
 
                 <div>
                     <form onSubmit={Register} className=''>
-<<<<<<< HEAD
-                        <input type="text" class="form-control" placeholder="User Name" required ref={usernameInput} pattern="^[a-zA-Z0-9]*$"
-                            title="Must contain only numbers and letters" />
-                        <input type="text" class="form-control" placeholder="Nickname" required ref={nicknameInput} pattern="^[a-zA-Z0-9]*$"
-                            title="Must contain only numbers and letters" />
-                        <input type="password" class="form-control" placeholder="Password" required ref={passwordInput} pattern="^(?!.* )(?=.*\d)(?=.*[A-Z]).{8,}$"
-                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-                        <input type="password" class="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput} />
-
-=======
                         <input type="text" className="form-control" placeholder="User Name" required ref={usernameInput} pattern="^[a-zA-Z0-9]*$"
                             title="Must contain only numbers and letters"/>
                         <input type="text" className="form-control" placeholder="Nickname" required ref={nicknameInput} pattern="^[a-zA-Z0-9]*$"
@@ -99,7 +77,6 @@ function RegisterForm(props) {
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
                         <input type="password" className="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput}/>
                         
->>>>>>> Shaked
                         <div className="avatar" ref={avaterInput} onClick={UploudImage}>
                             <img src={file} className="rounded-3 img-fluid"
                                 alt="Avatar" />
