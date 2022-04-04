@@ -6,6 +6,7 @@
     "\\src",
     "\\src\\db",
     "\\src\\Pages",
+    "\\src\\Pages\\ChatScreen",
     "\\src\\Pages\\Forms",
     "\\src\\Pages\\Forms\\Login",
     "\\src\\Pages\\Forms\\Register"
