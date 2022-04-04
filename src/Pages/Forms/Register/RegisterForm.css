@@ -39,14 +39,14 @@
 }
 
 .logo-right h1 {
-    color: white;
-    font-weight: 500;
-    font-size: 6vh;
-    font-family: "Courier New", Courier, monospace;
-    text-shadow: 2px 2px 1px rgba(150, 150, 150, 0.5);
-    animation-duration: 2s;
-    animation-name: fadein;
-    animation-timing-function: cubic-bezier(0.65, 0.24, 0.53, 0.86);
+  color: white;
+  font-weight: 500;
+  font-size: 6vh;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px 1px rgba(150, 150, 150, 0.5);
+  animation-duration: 2s;
+  animation-name: fadein;
+  animation-timing-function: cubic-bezier(0.65, 0.24, 0.53, 0.86);
 }
 
 .register-container {
@@ -111,9 +111,8 @@
   width: 11vw;
 }
 
-
 .hidden {
-   visibility: hidden;
+  visibility: hidden;
 }
 
 .register-container button {
@@ -146,7 +145,6 @@
 .container-small btn:focus{
   box-shadow: 0px 0px 16px 6px rgba(9, 60, 56, 0.3);
 } */
-
 
 .register-container p {
   position: absolute;
