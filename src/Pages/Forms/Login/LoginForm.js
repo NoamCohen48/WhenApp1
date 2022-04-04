@@ -35,7 +35,7 @@ function LoginForm(props) {
 
     return (
         <>
-            <div className={"container-lg container-small c-shadow" } >
+            <div className="container-lg container-small c-shadow" >
                 <div className='logo-center'>
                     <img src='/resources/Logo.png' alt='logo' />
                     <h1>WhenApp</h1>

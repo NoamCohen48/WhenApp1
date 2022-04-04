@@ -124,7 +124,7 @@
 
 }
 
-.container-small .c-shadow, .container-small.c-shadow {
+.container-small .c-shadow, .container-small.c-shadow, .container-large.c-shadow {
   box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);
   -webkit-box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.26);

@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import 'bootstrap';
 
 import './App.css';
-import ChatScreen from './Pages/Forms/ChatScreen/ChatScreen';
+import ChatScreen from './Pages/ChatScreen/ChatScreen';
 import LoginForm from './Pages/Forms/Login/LoginForm.js';
 import RegisterForm from './Pages/Forms/Register/RegisterForm';
 
