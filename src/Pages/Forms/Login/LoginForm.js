@@ -4,7 +4,7 @@ import './LoginForm.css'
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { findPerson } from '../../../db/api.js'
+import { findPerson } from '../../../db/users.js'
 
 function LoginForm(props) {
     const usernameInput = useRef();

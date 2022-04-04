@@ -6,16 +6,7 @@ import './RegisterForm.css'
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { findPerson, registerPerson } from '../../../db/api.js'
-
-function LeftSide(props) {
-    return (
-        <>
-
-        </>
-        )
-}
-
+import { findPerson, registerPerson } from '../../../db/users.js'
 
 function RegisterForm(props) {
 
