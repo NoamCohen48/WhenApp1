@@ -3,6 +3,7 @@ import SideBarItem from './SideBarItem';
 
 function SideBar(props) {
     let chatSetter = props.chatSetter;
+    let username = props.username;
 
     function selectChat(event){
         chatSetter("mike");

@@ -17,10 +17,10 @@ function ChatScreen(props) {
             <div className='container-lg container-large c-shadow'>
                 <div className='row'>
                     <div className="col-4 side-bar" >
-                        <SideBar chatSetter={setCurChatWith} />
+                        <SideBar username={username} chatSetter={setCurChatWith} />
                     </div>
                     <div className="col-8 dialog-screen" >
-                        <DialogScreen curChatWith={curChatWith} />
+                        <DialogScreen username={username} curChatWith={curChatWith} />
                     </div>
                 </div>
             </div>
