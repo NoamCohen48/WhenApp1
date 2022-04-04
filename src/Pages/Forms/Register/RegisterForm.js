@@ -16,6 +16,7 @@ function RegisterForm(props) {
     const nicknameInput = useRef();
     const uploudButton = useRef();
     const avaterInput = useRef();
+    const errorText = useRef();
 
 
     const navigate = useNavigate();
@@ -28,12 +29,22 @@ function RegisterForm(props) {
         let confirmPassword = confirmPasswordInput.current.value;
         let nickname = nicknameInput.current.value;
 
-        let person = findPerson({ username: username, password: password })
-        if (person.length >= 1) {
-            console.log('person found, wrong input');
+        let person = findPerson({ username: username })
 
+        if (password !== confirmPassword) {
+            errorText.current.style.visibility = "visible";
+            errorText.current.textContent = "Passwords are not the same.";
+            return;
+        }
+        if (person.length === 0) {
+            registerPerson(username, nickname, password)
             let state = { username: username }
-            navigate("/Chat", { state: state }) // need to transfer info about who registered
+            navigate("../Chat", { replace: true, state: state })
+        }
+
+        else {
+            errorText.current.style.visibility = "visible";
+            errorText.current.textContent = "User already been taken."
         }
     }
 
@@ -52,13 +63,13 @@ function RegisterForm(props) {
 
                 <div>
                     <form onSubmit={Register} className=''>
-                        <input type="text" class="form-control" placeholder="User Name" required ref={usernameInput} pattern="^[a-zA-Z0-9]*$"
+                        <input type="text" className="form-control" placeholder="User Name" required ref={usernameInput} pattern="^[a-zA-Z0-9]*$"
                             title="Must contain only numbers and letters"/>
-                        <input type="text" class="form-control" placeholder="Nickname" required ref={nicknameInput} pattern="^[a-zA-Z0-9]*$"
+                        <input type="text" className="form-control" placeholder="Nickname" required ref={nicknameInput} pattern="^[a-zA-Z0-9]*$"
                         title="Must contain only numbers and letters"/>
-                        <input type="password" class="form-control" placeholder="Password" required ref={passwordInput} pattern="^(?!.* )(?=.*\d)(?=.*[A-Z]).{8,}$"
+                        <input type="password" className="form-control" placeholder="Password" required ref={passwordInput} pattern="^(?!.* )(?=.*\d)(?=.*[A-Z]).{8,}$"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-                        <input type="password" class="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput}/>
+                        <input type="password" className="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput}/>
                         
                         <div className="avatar" ref={avaterInput} onClick={UploudImage}>
                             <img src="/resources/emptyAvatar.jpg" className="rounded-3 img-fluid"
@@ -66,6 +77,7 @@ function RegisterForm(props) {
                         </div>
                         <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton}></input>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">Register</button>
+                        <p ref={errorText} className='error'></p>
                     </form>
                 </div>
             </div>
