@@ -1,4 +1,4 @@
-var db = []
+var users_db = []
 
 export function registerPerson(username, nickname, password) {
     if (!(typeof username === 'string' || username instanceof String)) {
@@ -11,7 +11,7 @@ export function registerPerson(username, nickname, password) {
         return 'error';
     }
 
-    db.push({
+    users_db.push({
         'username': username,
         'nickname': nickname,
         'password': password
@@ -19,7 +19,7 @@ export function registerPerson(username, nickname, password) {
 }
 
 export function findPerson({ username, nickname, password }) {
-    let result = db;
+    let result = users_db;
     if (typeof username === 'string' || username instanceof String) {
         result = result.filter(person => person.username === username);
     }

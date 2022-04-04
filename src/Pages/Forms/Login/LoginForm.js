@@ -4,11 +4,12 @@ import './LoginForm.css'
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { findPerson } from '../../../db/api.js'
+import { findPerson } from '../../../db/users.js'
 
 function LoginForm(props) {
     const usernameInput = useRef();
     const passwordInput = useRef();
+    const errorText = useRef();
 
     const navigate = useNavigate();
 
@@ -18,8 +19,6 @@ function LoginForm(props) {
         let username = usernameInput.current.value;
         let password = passwordInput.current.value;
 
-        //TODO: validation
-
         let person = findPerson({ username: username, password: password })
         if (person.length === 1) {
             console.log('person found, login');
@@ -27,15 +26,12 @@ function LoginForm(props) {
             let state = { username: username }
             navigate("/Chat", { state: state }) // need to transfer info about who registered
         }
-
-        console.log('not found');
-
-        // TODO: Show Error
+        errorText.current.style.visibility = "visible";
     }
 
     return (
         <>
-            <div className="container-lg container-small c-shadow" >
+            <div className="container-lg login-container c-shadow" >
                 <div className='logo-center'>
                     <img src='/resources/Logo.png' alt='logo' />
                     <h1>WhenApp</h1>
@@ -44,13 +40,14 @@ function LoginForm(props) {
                 <div>
                     <form onSubmit={Login} className=''>
                         <div className="form-floating">
-                            <input type="text" className="form-control rounded-pill c-shadow" id="inputUsername" placeholder=" " ref={usernameInput} required/>
+                            <input type="text" className="form-control rounded-pill c-shadow" id="inputUsername" placeholder=" " ref={usernameInput} required />
                             <label htmlFor="inputUsername">User Name</label>
                         </div>
                         <div className="form-floating">
-                            <input type="password" className="form-control rounded-pill c-shadow " id="inputPassword" placeholder=" " ref={passwordInput} required/>
+                            <input type="password" className="form-control rounded-pill c-shadow " id="inputPassword" placeholder=" " ref={passwordInput} required />
                             <label htmlFor="inputPassword">Password</label>
                         </div>
+                        <p ref={errorText} className='error'>Username and Password combination is incorrect</p>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">LOGIN</button>
                     </form>
                     <p>To Register Press <Link to="register" className='link-light'>Here</Link></p>
