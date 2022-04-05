@@ -2,12 +2,6 @@ import React from 'react';
 import SideBarItem from './SideBarItem';
 
 function SideBar(props) {
-    let chatSetter = props.chatSetter;
-    let username = props.username;
-
-    function selectChat(event){
-        chatSetter("mike");
-    }
 
     /*
     TODO:
@@ -21,9 +15,9 @@ function SideBar(props) {
         <>
             this is the side bar
             <br></br>
-            <SideBarItem person={"mike"} chatSetter={chatSetter} />
+            <SideBarItem person={"mike"} />
             <br></br>
-            <SideBarItem person={"jhon"} chatSetter={chatSetter} />
+            <SideBarItem person={"jhon"}  />
 
         </>
     )
