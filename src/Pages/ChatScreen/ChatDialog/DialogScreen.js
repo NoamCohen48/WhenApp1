@@ -1,7 +1,8 @@
 import React from 'react';
+import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function DialogScreen(props) {
-    let curChatWith = props.curChatWith; // username
+    let ChatContext = useChatContext();
 
     /*
     TODO:
@@ -13,7 +14,7 @@ function DialogScreen(props) {
     return(
         <>
             this is a dialog screen
-            cur chat {curChatWith}
+            cur chat {ChatContext.curChat}
         </>
     )
 }

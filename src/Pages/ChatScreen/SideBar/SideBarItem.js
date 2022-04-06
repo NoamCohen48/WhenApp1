@@ -1,11 +1,12 @@
 import React from 'react';
+import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function SideBarItem(props) {
-    let chatSetter = props.chatSetter;
     let person = props.person;
+    let ChatContext = useChatContext();
 
     function selectChat(event){
-        chatSetter(person);
+        ChatContext.setCurChat(person);
     }
 
     /*
