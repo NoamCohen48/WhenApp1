@@ -38,7 +38,7 @@ function RegisterForm(props) {
             return;
         }
         if (person.length === 0) {
-            registerPerson(username, nickname, password)
+            registerPerson(username, nickname, password, file)
             let state = { username: username }
             navigate("../Chat", { replace: true, state: state })
         }
