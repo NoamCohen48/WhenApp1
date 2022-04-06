@@ -13,10 +13,10 @@
   border-width: 2px;
 }
 
-.side-bar {
-  background-color: red;
-}
-
 .dialog-screen {
   background-color: blue;
+}
+
+.container-large .row {
+  height: 100%;
 }
