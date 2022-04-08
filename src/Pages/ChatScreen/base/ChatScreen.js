@@ -10,30 +10,9 @@ import { useChatContext } from '../../../Components/ContextProvider/ChatContextP
 function ChatScreen(props) {
     let location = useLocation();
     let chatContext = useChatContext();
-    const [user, setUser] = useState(undefined);
 
-    // fetching info
-    useEffect(() => {
-        let username = location.state.username;
-
-        // setting username
-        chatContext.setCurUser(() => {
-            // getting username from db
-            let user = findPerson({ "username": username })[0];
-
-            // setting the contacts
-            chatContext.setContacts(() => {
-                let contact = user.contacts;
-
-                return contact;
-            });
-
-            return user;
-        });
-    }, []);
-
-
-    // TODO: find a solution for fetching contacts, now doing it here, putting in context and extracting in side bar
+    // TODO: find a solution for fetching contacts, 
+    // now doing it here, putting in context and extracting in side bar
     // Need a way to tell this parent that side bar is loading. 
 
     if (chatContext.curUser === undefined) {

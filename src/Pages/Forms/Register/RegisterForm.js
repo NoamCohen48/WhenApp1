@@ -7,6 +7,7 @@ import './RegisterForm.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 import { findPerson, registerPerson } from '../../../db/users.js'
+import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function RegisterForm(props) {
 
@@ -21,6 +22,7 @@ function RegisterForm(props) {
     const [file, setFile] = useState("/resources/emptyAvatar.jpg");
 
     const navigate = useNavigate();
+    const chatContext = useChatContext();
 
     function Register(event) {
         event.preventDefault();
@@ -37,10 +39,13 @@ function RegisterForm(props) {
             errorText.current.textContent = "Passwords are not the same.";
             return;
         }
+
         if (person.length === 0) {
+            // TODO: do it async from db
             registerPerson(username, nickname, password)
-            let state = { username: username }
-            navigate("../Chat", { replace: true, state: state })
+
+            chatContext.userEntered(username)
+            navigate("../Chat", { replace: true })
         }
 
         else {
@@ -70,13 +75,13 @@ function RegisterForm(props) {
                 <div>
                     <form onSubmit={Register} className=''>
                         <input type="text" className="form-control" placeholder="User Name" required ref={usernameInput} pattern="^[a-zA-Z0-9]*$"
-                            title="Must contain only numbers and letters"/>
+                            title="Must contain only numbers and letters" />
                         <input type="text" className="form-control" placeholder="Nickname" required ref={nicknameInput} pattern="^[a-zA-Z0-9]*$"
-                        title="Must contain only numbers and letters"/>
+                            title="Must contain only numbers and letters" />
                         <input type="password" className="form-control" placeholder="Password" required ref={passwordInput} pattern="^(?!.* )(?=.*\d)(?=.*[A-Z]).{8,}$"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-                        <input type="password" className="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput}/>
-                        
+                        <input type="password" className="form-control" placeholder="Confirm Password" required ref={confirmPasswordInput} />
+
                         <div className="avatar" ref={avaterInput} onClick={UploudImage}>
                             <img src={file} className="rounded-3 img-fluid"
                                 alt="Avatar" />

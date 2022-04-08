@@ -7,7 +7,7 @@ function AddContact(props) {
     const closeBtn = useRef(undefined)
 
     function addContact() {
-        // validate input
+        // TODO: add validate input
 
         chatContext.addContact(usernameInput.current.value);
 
@@ -16,7 +16,7 @@ function AddContact(props) {
     }
 
     return (
-        <div className="modal fade" id={props.id} tabindex={props.tabindex} aria-labelledby={props.aria_labelledby} aria-hidden={props.aria_hidden}>
+        <div className="modal fade" id={props.id} tabIndex={props.tabindex} aria-labelledby={props.aria_labelledby} aria-hidden={props.aria_hidden}>
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">

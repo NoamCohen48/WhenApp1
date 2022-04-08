@@ -5,14 +5,8 @@ import './SideBar.css'
 import AddContact from './AddContact';
 
 function SideBar(props) {
-    let chatContext = useChatContext();
+    const chatContext = useChatContext();
     let user = chatContext.curUser;
-
-    // useEffect(() => {
-    //     setContacts((prevContacts) => {
-    //         return chatContext.contacts;
-    //     })
-    // }, []);
 
     /*
     TODO:
@@ -22,11 +16,6 @@ function SideBar(props) {
     4. fetch contacts
     5. design top bar
     */
-
-    function addContact() {
-
-    }
-
 
     if (chatContext.contacts === undefined) {
         return (
@@ -41,7 +30,7 @@ function SideBar(props) {
             <div className='top-bar'>
                 <img src={user.img} />
                 <p>{user.nickname}</p>
-                <i className="bi bi-person-plus" onClick={addContact} data-bs-toggle="modal" data-bs-target="#AddContactModal"/>
+                <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
                 <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" />
             </div>
             <div className='contacts-list styled-scrollbars'>
