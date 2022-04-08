@@ -4,14 +4,14 @@ import SideBarItem from './SideBarItem';
 import './SideBar.css'
 
 function SideBar(props) {
-    const [contacts, setContacts] = useState(undefined)
     let chatContext = useChatContext();
+    let user = chatContext.curUser;
 
-    useEffect(() => {
-        setContacts((prevContacts) => {
-            return chatContext.contacts;
-        })
-    }, []);
+    // useEffect(() => {
+    //     setContacts((prevContacts) => {
+    //         return chatContext.contacts;
+    //     })
+    // }, []);
 
     /*
     TODO:
@@ -22,8 +22,12 @@ function SideBar(props) {
     5. design top bar
     */
 
+    function addContact() {
 
-    if (contacts === undefined) {
+    }
+
+
+    if (chatContext.contacts === undefined) {
         return (
             <h1>
                 Loading
@@ -34,10 +38,12 @@ function SideBar(props) {
     return (
         <>
             <div className='top-bar'>
-                <h1>User info</h1>
+                <img src={user.img} />
+                <p>{user.nickname}</p>
+                <i className="bi bi-person-plus" onClick={addContact} />
             </div>
-            <div className='contacts-list'>
-                {contacts.map(username =>
+            <div className='contacts-list styled-scrollbars'>
+                {chatContext.contacts.map(username =>
                     <SideBarItem key={username} username={username} />
                 )}
             </div>

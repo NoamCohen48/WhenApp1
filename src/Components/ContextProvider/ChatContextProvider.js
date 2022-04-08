@@ -8,8 +8,9 @@ export function useChatContext() {
 }
 
 function ChatContextProvider(props) {
-    const [contacts, setContacts] = useState([]);
-    const [curChat, setCurChat] = useState();
+    const [contacts, setContacts] = useState(undefined);
+    const [curChat, setCurChat] = useState(undefined);
+    const [curUser, setCurUser] = useState(undefined);
 
     function addContact(username) {
         setContacts((prevContacts) => {
@@ -18,7 +19,10 @@ function ChatContextProvider(props) {
     }
 
     let context = {
+        curUser: curUser,
+        setCurUser: setCurUser,
         contacts: contacts,
+        setContacts: setContacts,
         addContact: addContact,
         curChat: curChat,
         setCurChat: setCurChat,
