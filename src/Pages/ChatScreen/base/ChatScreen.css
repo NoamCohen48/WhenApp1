@@ -3,7 +3,8 @@
   width: 75vw;
   height: 80vh;
   margin: 10vh auto auto;
-  padding-bottom: 5vh;
+  padding: 0;
+  /* padding-bottom: 5vh; */
 
   background-color: #006962;
 

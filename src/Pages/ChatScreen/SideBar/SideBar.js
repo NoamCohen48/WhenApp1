@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 import SideBarItem from './SideBarItem';
 import './SideBar.css'
+import AddContact from './AddContact';
 
 function SideBar(props) {
     let chatContext = useChatContext();
@@ -40,7 +41,8 @@ function SideBar(props) {
             <div className='top-bar'>
                 <img src={user.img} />
                 <p>{user.nickname}</p>
-                <i className="bi bi-person-plus" onClick={addContact} />
+                <i className="bi bi-person-plus" onClick={addContact} data-bs-toggle="modal" data-bs-target="#AddContactModal"/>
+                <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" />
             </div>
             <div className='contacts-list styled-scrollbars'>
                 {chatContext.contacts.map(username =>

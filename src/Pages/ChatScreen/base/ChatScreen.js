@@ -25,13 +25,6 @@ function ChatScreen(props) {
             chatContext.setContacts(() => {
                 let contact = user.contacts;
 
-                // TODO: remove manual contacts
-                contact.push("holt");
-                contact.push("jason");
-                contact.push("noam");
-                contact.push("shaked");
-                contact.push("roi");
-
                 return contact;
             });
 
