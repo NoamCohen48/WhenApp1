@@ -8,7 +8,6 @@ import { findPerson } from '../../../db/users';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function ChatScreen(props) {
-    let location = useLocation();
     let chatContext = useChatContext();
 
     // TODO: find a solution for fetching contacts, 

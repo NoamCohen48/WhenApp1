@@ -12,12 +12,12 @@ function ChatContextProvider(props) {
     const [contacts, setContacts] = useState(undefined);
     const [curChat, setCurChat] = useState(undefined);
     const [curUser, setCurUser] = useState(undefined);
-    
+
     // fetching info when a new user entred
     function userEntered(username) {
-        localStorage.setItem('user', username)
+        localStorage.setItem('username', username)
 
-        setCurUser(()=>{
+        setCurUser(() => {
             // getting username from db
             let user = findPerson({ "username": username })[0];
 
@@ -28,10 +28,15 @@ function ChatContextProvider(props) {
                 return contact;
             });
 
-            
+
             return user;
         })
     }
+
+    // useEffect(() => {
+    //     let username = localStorage.getItem('username');
+    //     if (username) userEntered(username);
+    // }, []);
 
     function addContact(username) {
         setContacts((prevContacts) => {
@@ -41,7 +46,6 @@ function ChatContextProvider(props) {
 
     let context = {
         curUser: curUser,
-        setCurUser: setCurUser,
         userEntered: userEntered,
         contacts: contacts,
         setContacts: setContacts,

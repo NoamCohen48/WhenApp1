@@ -26,7 +26,7 @@ function LoginForm(props) {
         if (person.length === 1) {
 
             chatContext.userEntered(username)
-            navigate("/Chat", { replace: true }) // need to transfer info about who registered
+            navigate("/Chat") // need to transfer info about who registered
         }
 
         // show error

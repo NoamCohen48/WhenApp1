@@ -42,10 +42,10 @@ function RegisterForm(props) {
 
         if (person.length === 0) {
             // TODO: do it async from db
-            registerPerson(username, nickname, password)
+            registerPerson(username, nickname, password, file);
 
-            chatContext.userEntered(username)
-            navigate("../Chat", { replace: true })
+            chatContext.userEntered(username);
+            navigate("../Chat");
         }
 
         else {

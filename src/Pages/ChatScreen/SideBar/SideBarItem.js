@@ -22,6 +22,7 @@ function SideBarItem(props) {
             'contacts': []
         }
     }
+    
     /*
     TODO:
     1. create the item and set on click
