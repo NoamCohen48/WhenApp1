@@ -1,5 +1,6 @@
 import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import './DialogScreen.css'
 
 function DialogScreen(props) {
     let ChatContext = useChatContext();
@@ -11,7 +12,7 @@ function DialogScreen(props) {
     3. fetch info from db using useEffect
     */
 
-    return(
+    return (
         <>
             this is a dialog screen
             cur chat {ChatContext.curChat}
