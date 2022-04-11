@@ -1,10 +1,12 @@
-var messages_db = []
+var messages_db2 = []
 
-export function addMessage(from, to, type, data, date) {
-    if (!(typeof from === 'string' || from instanceof String)) {
+var messages_db = new Map();
+
+export function addMessage(contact, iSent, type, data, date) {
+    if (!(typeof contact === 'string' || contact instanceof String)) {
         return 'error';
     }
-    if (!(typeof to === 'string' || to instanceof String)) {
+    if (!(typeof to === 'string' || iSent instanceof String)) {
         return 'error';
     }
     if (!(typeof data === 'string' || data instanceof String)) {
@@ -17,26 +19,23 @@ export function addMessage(from, to, type, data, date) {
         return 'error';
     }
 
-    messages_db.push({
-        'from': from,
-        'to': to,
+    messages_db.set(contact, []);
+    messages_db.get(contact).push({
+        'iSent': iSent,
         'type': type,
         'data': data,
         'date': date
     });
 }
 
-export function receiveMessages(from, to){
-    if (!(typeof from === 'string' || from instanceof String)) {
-        return 'error';
-    }
-    if (!(typeof to === 'string' || to instanceof String)) {
+export function receiveMessages(contact) {
+    if (!(typeof contact === 'string' || contact instanceof String)) {
         return 'error';
     }
 
-    return messages_db.filter(message => message.from === from && message.to === to);
+    return messages_db.get(contact)
 }
 
-addMessage("noam", "shaked", "text", "hello there", "now");
-addMessage("noam", "shaked", "text", "you here", "now");
-addMessage("shaked", "noam", "img", "<cat smiling>", "then");
+addMessage("mike", true, "text", "hello there mike?", Date());
+addMessage("mike", false, "text", "yeah", Date());
+addMessage("jhon", true, "text", "bla", Date());

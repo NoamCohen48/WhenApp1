@@ -7,7 +7,7 @@ import './DialogScreen.css'
 
 function DialogScreen(props) {
     let ChatContext = useChatContext();
-
+    
     /*
     TODO:
     1. add placeholder
