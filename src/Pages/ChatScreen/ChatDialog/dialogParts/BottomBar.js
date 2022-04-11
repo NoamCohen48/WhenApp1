@@ -12,7 +12,10 @@ function BottomBar(props) {
         let text = inputText.current.value;
 
         // TODO: add Message
-        addMessage(chatContext.curUser, true, 'text', text, Date());
+        addMessage(chatContext.curChat, true, 'text', text, Date());
+        props.update();
+
+        inputText.current.value = ''
     }
 
     return (
@@ -22,7 +25,7 @@ function BottomBar(props) {
             <i className="bi bi-mic"></i>
 
             <div className="input-group">
-                <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
                 <span className="input-group-text" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
             </div>
 

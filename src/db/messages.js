@@ -6,16 +6,6 @@ export function addUserMessages(contact) {
 }
 
 export function addMessage(contact, iSent, type, data, date) {
-    if (!(typeof contact === 'string' || contact instanceof String)) {
-        return 'error';
-    }
-    if (!(typeof data === 'string' || data instanceof String)) {
-        return 'error';
-    }
-    if (!(typeof type === 'string' || type instanceof String)) {
-        return 'error';
-    }
-
     messages_db.get(contact).push({
         'iSent': iSent,
         'type': type,
