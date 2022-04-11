@@ -3,6 +3,10 @@ import { createContext, useState } from 'react';
 import { findPerson } from '../../../../db/users.js';
 
 import { receiveMessages } from '../../../../db/messages.js';
+import TextMessage from '../../ChatDialog/Messages/TextMessage';
+import AudioMessage from '../../ChatDialog/Messages/AudioMessage';
+import VideoMessage from '../../ChatDialog/Messages/VideoMessage';
+import ImgMessage from '../../ChatDialog/Messages/ImgMessage';
 
 
 function MessgaesConteiner(props) {
@@ -26,7 +30,19 @@ function MessgaesConteiner(props) {
         <>
             {
                 messages.map(message => {
-                    
+
+                    if(message.type === "text") {
+                        <TextMessage message={message}/>
+                    }
+                    if(message.type === "audio") {
+                        <AudioMessage message={message}/>
+                    }
+                    if(message.type === "video") {
+                        <VideoMessage message={message}/>
+                    }
+                    if(message.type === "img") {
+                        <ImgMessage message={message}/>
+                    }
                     return <h1 key={index++}>{message.data}</h1>;
 
 
