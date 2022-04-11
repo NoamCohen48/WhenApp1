@@ -1,7 +1,7 @@
 import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 import BottomBar from './dialogParts/BottomBar';
-import MessgaesConteiner from './dialogParts/Messages';
+import MessgaesConteiner from './dialogParts/MessgaesConteiner.js';
 import TopBar from './dialogParts/TopBar';
 import './DialogScreen.css'
 

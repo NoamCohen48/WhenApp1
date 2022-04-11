@@ -3,10 +3,10 @@ import { createContext, useState } from 'react';
 import { findPerson } from '../../../../db/users.js';
 
 import { receiveMessages } from '../../../../db/messages.js';
-import TextMessage from '../../ChatDialog/Messages/TextMessage';
-import AudioMessage from '../../ChatDialog/Messages/AudioMessage';
-import VideoMessage from '../../ChatDialog/Messages/VideoMessage';
-import ImgMessage from '../../ChatDialog/Messages/ImgMessage';
+import TextMessage from '../Messages/TextMessage';
+import AudioMessage from '../Messages/AudioMessage';
+import VideoMessage from '../Messages/VideoMessage';
+import ImgMessage from '../Messages/ImgMessage';
 
 
 function MessgaesConteiner(props) {
