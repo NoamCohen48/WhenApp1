@@ -14,8 +14,15 @@ function DialogScreen(props) {
 
     return (
         <>
-            this is a dialog screen
-            cur chat {ChatContext.curChat}
+            <div className='top-bar'>
+                <h1>tob bar</h1>
+            </div>
+            <div className='messages-conteiner'>
+                <h1>messages</h1>
+            </div>
+            <div className='bot-bar'>
+                <h1>bot</h1>
+            </div>
         </>
     )
 }
