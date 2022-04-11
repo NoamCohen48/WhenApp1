@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useChatContext } from '../../../../Components/ContextProvider/ChatContextProvider';
-import { addMessage } from '../../../../db/messages';
+import { addMessage } from '../../../../db/messages.js';
 import './BottomBar.css'
 
 function BottomBar(props) {

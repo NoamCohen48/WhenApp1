@@ -3,7 +3,7 @@ import { useChatContext } from '../../../Components/ContextProvider/ChatContextP
 import { receiveMessages } from '../../../db/messages';
 import { findPerson } from '../../../db/users';
 import BottomBar from './dialogParts/BottomBar';
-import MessgaesConteiner from './dialogParts/Messages';
+import MessgaesConteiner from './dialogParts/MessgaesConteiner.js';
 import TopBar from './dialogParts/TopBar';
 import './DialogScreen.css'
 
