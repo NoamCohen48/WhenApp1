@@ -25,7 +25,12 @@ function MessgaesConteiner(props) {
     return(
         <>
             {
-                messages.map(message => <h1 key={index++}>{message.data}</h1>)
+                messages.map(message => {
+                    
+                    return <h1 key={index++}>{message.data}</h1>;
+
+
+                    })
             }
         </>
     )
