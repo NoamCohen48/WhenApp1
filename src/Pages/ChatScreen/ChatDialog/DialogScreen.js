@@ -18,10 +18,10 @@ function DialogScreen(props) {
     return (
         <>
             <div className='top-bar'>
-                <TopBar />
+                <TopBar CurrentChat={ChatContext.curChat}/>
             </div>
             <div className='messages-conteiner'>
-                <MessgaesConteiner />
+                <MessgaesConteiner CurrentChat={ChatContext.curChat}/>
             </div>
             <div className='bot-bar'>
                 <BottomBar />
