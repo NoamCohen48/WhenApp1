@@ -5,6 +5,7 @@ import './LoginForm.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 import { findPerson } from '../../../db/users.js'
+import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function LoginForm(props) {
     const usernameInput = useRef();
@@ -12,6 +13,7 @@ function LoginForm(props) {
     const errorText = useRef();
 
     const navigate = useNavigate();
+    const chatContext = useChatContext();
 
     function Login(event) {
         event.preventDefault();
@@ -19,13 +21,15 @@ function LoginForm(props) {
         let username = usernameInput.current.value;
         let password = passwordInput.current.value;
 
+        // TODO: do it async from db
         let person = findPerson({ username: username, password: password })
         if (person.length === 1) {
-            console.log('person found, login');
 
-            let state = { username: username }
-            navigate("/Chat", { state: state }) // need to transfer info about who registered
+            chatContext.userEntered(username)
+            navigate("/Chat") // need to transfer info about who registered
         }
+
+        // show error
         errorText.current.style.visibility = "visible";
     }
 

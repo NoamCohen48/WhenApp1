@@ -1,0 +1,50 @@
+.chat-container {
+  position: relative;
+  width: 75vw;
+  height: 80vh;
+  margin: 10vh auto auto;
+  padding: 0;
+  /* padding-bottom: 5vh; */
+
+  background-color: #006962;
+
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #01424b;
+  border-width: 2px;
+}
+
+.dialog-screen {
+  background-color: blue;
+}
+
+.chat-container .row {
+  height: 100%;
+}
+
+/* ScrollBar */
+
+.styled-scrollbars {
+  /* Foreground, Background */
+  /* scrollbar-color: #999 #333; */
+}
+.styled-scrollbars::-webkit-scrollbar {
+  width: 15px; /* Mostly for vertical scrollbars */
+  
+}
+.styled-scrollbars::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: rgb(2, 104, 134);
+
+
+  border-style: solid;
+  border-color: rgb(187, 233, 247);
+  border-radius: 8px;
+  border-width: 3px;
+}
+.styled-scrollbars::-webkit-scrollbar-track {
+  /* Background */
+  background: rgb(187, 233, 247);
+
+  border-radius: 6px;
+}
