@@ -1,4 +1,17 @@
 
+.dialog-screen .messages-conteiner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    background-color: lightgray;
+    overflow-y:auto;
+
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+
+    transition: all 0.3s ease-in-out;
+}
 
 .message {
     position: relative;
@@ -7,11 +20,17 @@
     font-size: medium;
     border-radius: 15px;
     border-style: solid;
-    min-height: 50px;
     margin: 10px;
     width: 40%;
-    height: 10%;
+    overflow-wrap: anywhere;
+    margin: 5px;
+    padding: 3px;
 }
+
+.message:last-child {
+    scroll-snap-align: end;
+}
+
 
 .message.my-message {
     border-color: rgb(212, 246, 232);

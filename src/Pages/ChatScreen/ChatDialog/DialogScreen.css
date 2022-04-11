@@ -2,22 +2,10 @@
   background-color: rgb(60, 159, 42);
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
-.dialog-screen .top-bar{
-    height: 15%;
-    background-color: silver;
-}
-
-.dialog-screen .messages-conteiner {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 70%;
-    background-color: lightgray;
-}
-
-.dialog-screen .bot-bar {
-    height: 15%;
-    background-color: chartreuse;
+.dialog-screen .top-bar {
+  height: 15%;
+  background-color: #8bc6ca;
 }

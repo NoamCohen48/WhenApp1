@@ -12,6 +12,7 @@ function BottomBar(props) {
         let text = inputText.current.value;
 
         // TODO: add Message
+        // TODO: enter to send
         addMessage(chatContext.curChat, true, 'text', text, Date());
         props.update();
 

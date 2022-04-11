@@ -33,6 +33,8 @@ function LoginForm(props) {
         errorText.current.style.visibility = "visible";
     }
 
+    // TODO: add icons near input
+
     return (
         <>
             <div className="container-lg login-container c-shadow" >
