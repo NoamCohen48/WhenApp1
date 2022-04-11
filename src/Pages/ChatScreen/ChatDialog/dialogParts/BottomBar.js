@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react';
+import { useChatContext } from '../../../../Components/ContextProvider/ChatContextProvider';
+import { addMessage } from '../../../../db/messages';
 import './BottomBar.css'
 
 function BottomBar(props) {
+    let chatContext = useChatContext();
     let inputText = useRef();
     const [addon, setAddon] = useState(false);
 
@@ -9,6 +12,7 @@ function BottomBar(props) {
         let text = inputText.current.value;
 
         // TODO: add Message
+        addMessage(chatContext.curUser, true, 'text', text, Date());
     }
 
     return (

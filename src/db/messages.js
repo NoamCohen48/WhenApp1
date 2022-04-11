@@ -1,4 +1,3 @@
-var messages_db2 = []
 
 var messages_db = new Map();
 
