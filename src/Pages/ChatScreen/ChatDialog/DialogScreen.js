@@ -1,5 +1,6 @@
 import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import './DialogScreen.css'
 
 function DialogScreen(props) {
     let ChatContext = useChatContext();
@@ -11,7 +12,7 @@ function DialogScreen(props) {
     3. fetch info from db using useEffect
     */
 
-    return(
+    return (
         <>
             <div>
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />

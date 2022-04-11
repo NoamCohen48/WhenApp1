@@ -36,6 +36,7 @@
   font-size: 25px;
   margin: 20px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .side-bar .contacts-list {
