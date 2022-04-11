@@ -1,0 +1,30 @@
+
+
+.message {
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    font-size: medium;
+    border-radius: 15px;
+    border-style: solid;
+    min-height: 50px;
+    margin: 10px;
+    width: 40%;
+    height: 10%;
+}
+
+.message.my-message {
+    border-color: aliceblue;
+    background-color: aliceblue;
+    border-top-left-radius: 0%;
+    align-items: left;
+    
+
+}
+
+.message.other-message {
+    border-color: rgb(177, 215, 249);
+    background-color: rgb(177, 215, 249);
+    border-top-right-radius: 0%;
+    align-items: right;
+}

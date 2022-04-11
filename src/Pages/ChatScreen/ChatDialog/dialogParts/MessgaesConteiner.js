@@ -7,6 +7,7 @@ import TextMessage from '../Messages/TextMessage';
 import AudioMessage from '../Messages/AudioMessage';
 import VideoMessage from '../Messages/VideoMessage';
 import ImgMessage from '../Messages/ImgMessage';
+import "../Messages/Messgaes.css"
 
 
 function MessgaesConteiner(props) {
@@ -32,20 +33,17 @@ function MessgaesConteiner(props) {
                 messages.map(message => {
 
                     if(message.type === "text") {
-                        <TextMessage message={message}/>
+                        return <TextMessage className="message" message={message}/>
                     }
                     if(message.type === "audio") {
-                        <AudioMessage message={message}/>
+                        return <AudioMessage message={message}/>
                     }
                     if(message.type === "video") {
-                        <VideoMessage message={message}/>
+                        return <VideoMessage message={message}/>
                     }
                     if(message.type === "img") {
-                        <ImgMessage message={message}/>
+                        return <ImgMessage message={message}/>
                     }
-                    return <h1 key={index++}>{message.data}</h1>;
-
-
                     })
             }
         </>
