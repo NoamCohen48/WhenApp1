@@ -1,5 +1,8 @@
 import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import BottomBar from './dialogParts/BottomBar';
+import MessgaesConteiner from './dialogParts/Messages';
+import TopBar from './dialogParts/TopBar';
 import './DialogScreen.css'
 
 function DialogScreen(props) {
@@ -15,13 +18,13 @@ function DialogScreen(props) {
     return (
         <>
             <div className='top-bar'>
-                <h1>tob bar</h1>
+                <TopBar />
             </div>
             <div className='messages-conteiner'>
-                <h1>messages</h1>
+                <MessgaesConteiner />
             </div>
             <div className='bot-bar'>
-                <h1>bot</h1>
+                <BottomBar />
             </div>
         </>
     )
