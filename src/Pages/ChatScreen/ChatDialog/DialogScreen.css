@@ -6,12 +6,12 @@
 
 .dialog-screen .top-bar{
     height: 15%;
-    background-color: blue;
+    background-color: silver;
 }
 
 .dialog-screen .messages-conteiner {
     height: 70%;
-    background-color: brown;
+    background-color: lightgray;
 }
 
 .dialog-screen .bot-bar {
