@@ -7,6 +7,7 @@
     "\\src\\db",
     "\\src\\Pages",
     "\\src\\Pages\\ChatScreen",
+    "\\src\\Pages\\ChatScreen\\ChatDialog",
     "\\src\\Pages\\Forms",
     "\\src\\Pages\\Forms\\Login",
     "\\src\\Pages\\Forms\\Register"
