@@ -1,11 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { createContext, useState } from 'react';
 import { findPerson } from '../../db/users';
 
 const ChatContext = createContext();
+const RenderContext = createContext();
 
 export function useChatContext() {
     return useContext(ChatContext);
+}
+
+export function useRenderContext() {
+    return useContext(RenderContext);
 }
 
 function ChatContextProvider(props) {
@@ -31,12 +36,9 @@ function ChatContextProvider(props) {
 
             return user;
         })
-    }
 
-    // useEffect(() => {
-    //     let username = localStorage.getItem('username');
-    //     if (username) userEntered(username);
-    // }, []);
+        setCurChat(undefined);
+    }
 
     function addContact(username) {
         setContacts((prevContacts) => {
@@ -54,9 +56,14 @@ function ChatContextProvider(props) {
         setCurChat: setCurChat,
     }
 
+    const [, updateState] = useState(0);
+    const forceUpdate = useCallback(() => updateState((prev) => prev + 1), []);
+
     return (
         <ChatContext.Provider value={context}>
-            {props.children}
+            <RenderContext.Provider value={forceUpdate} >
+                {props.children}
+            </RenderContext.Provider>
         </ChatContext.Provider>
     )
 }
