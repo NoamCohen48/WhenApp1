@@ -1,18 +1,44 @@
 import React, { useRef } from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { findPerson } from '../../../db/users.js'
 
 function AddContact(props) {
     let chatContext = useChatContext();
     const usernameInput = useRef(undefined)
     const closeBtn = useRef(undefined)
+    const errorText = useRef();
 
     function addContact() {
         // TODO: add validate input
+
+        let username = usernameInput.current.value;
+
+        let person = findPerson({ username: username })
+
+        if (person <= 0) {
+            errorText.current.style.visibility = "visible";
+            errorText.current.textContent = "User not found.";
+            return;
+        }
+
+        if (username === chatContext.curUser.username) {
+            errorText.current.style.visibility = "visible";
+            errorText.current.textContent = "You can't add yourself!";
+            return;
+        }
+
+        if (chatContext.contacts.filter(personUserName => personUserName === username).length >= 1) {
+            errorText.current.style.visibility = "visible";
+            errorText.current.textContent = "User already present.";
+            return;
+        }
 
         chatContext.addContact(usernameInput.current.value);
 
         closeBtn.current.click();
         usernameInput.current.value = ''
+        errorText.current.style.visibility = "hidden";
+
     }
 
     return (
@@ -25,6 +51,7 @@ function AddContact(props) {
                     </div>
                     <div className="modal-body">
                         <input type="text" className="form-control" placeholder="User Name" ref={usernameInput} />
+                        <p ref={errorText} className='error'></p>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" ref={closeBtn}>Cancel</button>
