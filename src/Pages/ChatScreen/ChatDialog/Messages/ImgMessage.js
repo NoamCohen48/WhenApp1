@@ -1,9 +1,13 @@
 import React from 'react';
 
 function ImgMessage(props) {
+    let className = props.className.concat(' ', props.message.iSent ? ' my-message' : ' other-message');
     return(
         <>
-            <h1>Image</h1>
+                <div className={className}>
+                    <img src={props.message.data}/>
+                    <p>{props.message.date}</p>
+                </div>
         </>
     )
 }

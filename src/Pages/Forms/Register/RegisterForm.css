@@ -111,10 +111,6 @@
   width: 11vw;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 .register-container button {
   position: absolute;
   right: 7%;
