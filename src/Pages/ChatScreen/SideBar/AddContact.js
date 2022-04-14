@@ -8,6 +8,12 @@ function AddContact(props) {
     const closeBtn = useRef(undefined)
     const errorText = useRef();
 
+    function onKeyPress(event) {
+        if (event.key === 'Enter') {
+            addContact();
+        }
+    }
+
     function addContact() {
         // TODO: add validate input
 
@@ -50,7 +56,7 @@ function AddContact(props) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <input type="text" className="form-control" placeholder="User Name" ref={usernameInput} />
+                        <input type="text" className="form-control" placeholder="User Name" ref={usernameInput} onKeyDown={onKeyPress} />
                         <p ref={errorText} className='error'></p>
                     </div>
                     <div className="modal-footer">

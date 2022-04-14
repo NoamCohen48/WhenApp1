@@ -1,5 +1,4 @@
 .dialog-screen .bot-bar {
-  
   height: 10%;
   background-color: #8bc6ca;
   display: flex;
@@ -54,22 +53,19 @@
 }
 
 .dialog-screen .bot-bar .recorder > i {
-  position: absolute;
-  left: 7px;
-
   transition: opacity 0.1s ease-in-out;
 }
 
 .dialog-screen .bot-bar .recorder > i:nth-child(2) {
-  opacity: 0%;
+  display: none;
 }
 
 .dialog-screen .bot-bar .recorder.recording > i:nth-child(1) {
-  opacity: 0%;
+  display: none;
 }
 
 .dialog-screen .bot-bar .recorder.recording > i:nth-child(2) {
-  opacity: 100%;
+  display: block;
   color: rgb(117, 31, 31);
 
   animation-name: inOut;

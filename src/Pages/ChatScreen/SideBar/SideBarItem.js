@@ -18,7 +18,6 @@ function SideBarItem(props) {
 
     var lastMessage = messages[messages.length - 1];
 
-    console.log(username, 'messages', lastMessage)
     let lastMessageText;
     let dateStr;
 

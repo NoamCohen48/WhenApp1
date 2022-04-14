@@ -69,7 +69,7 @@ function BottomBar(props) {
         <>
             <i className="bi bi-image" onClick={(event) => { uploudButtonImg.current.click(event) }}></i>
             <i className="bi bi-camera-video" onClick={(event) => { uploudButtonVideo.current.click(event) }}></i>
-            <div className={`recorder ${isRecording ? ' recording' : ''}`} ref={recorderBtn} onClick={micClick}>
+            <div className={`recorder text-center ${isRecording ? ' recording' : ''}`} ref={recorderBtn} onClick={micClick}>
                 <i className="bi bi-mic" disabled={isRecording} ></i>
                 <i className="bi bi-record-fill" disabled={!isRecording}></i>
             </div>

@@ -25,7 +25,7 @@ function MessgaesConteiner(props) {
         <>
             {
                 messages.map(message => {
-                    return <TextMessage className="message" message={message} />
+                    return <TextMessage key={message.id} className="message" message={message} />
                 })
             }
         </>
