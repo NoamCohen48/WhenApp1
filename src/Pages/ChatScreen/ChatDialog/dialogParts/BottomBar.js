@@ -46,6 +46,10 @@ function BottomBar(props) {
     }
 
     useEffect(() => {
+        if (audioURL === '') {
+            return;
+        }
+
         addMessage(chatContext.curChat, true, 'audio', audioURL, Date());
         props.update();
     }, [audioURL])
@@ -65,7 +69,7 @@ function BottomBar(props) {
                 <i className="bi bi-record-fill" onClick={stopRecording} disabled={!isRecording}></i>
             </div>
 
-            <audio src={audioURL} controls />
+            {/* <audio src={audioURL} controls /> */}
 
             <div className="input-group">
                 <input type="text" className="form-control" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
