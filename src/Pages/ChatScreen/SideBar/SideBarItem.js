@@ -1,5 +1,6 @@
 import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { receiveMessages } from '../../../db/messages';
 import { findPerson } from '../../../db/users';
 
 
@@ -13,16 +14,42 @@ function SideBarItem(props) {
 
     let person = findPerson({ username: username })[0];
 
-    if (person === undefined) {
-        person = {
-            'username': username,
-            'nickname': username + " dafault",
-            'password': "secret password",
-            'img': "https://api.time.com/wp-content/uploads/2019/08/caveman-spongebob-spongegar.png",
-            'contacts': []
-        }
+    let messages = receiveMessages(username)
+
+    var lastMessage = messages[messages.length - 1];
+
+    console.log(username, 'messages', lastMessage)
+    let lastMessageText;
+    let dateStr;
+
+    if (lastMessage === undefined) {
+        lastMessageText = '';
+        dateStr = '';
     }
-    
+    else {
+        switch (lastMessage.type) {
+            case 'text':
+                lastMessageText = lastMessage.data;
+                break;
+            case 'audio':
+                lastMessageText = 'audio';
+                break
+            case 'video':
+                lastMessageText = 'video';
+                break;
+            case 'img':
+                lastMessageText = 'image';
+                break
+            default:
+                lastMessageText = 'message';
+        }
+
+        const date = lastMessage.date;
+        const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+        const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+        dateStr = `${hour}:${minutes}, ${day}/${month}/${year}`;
+    }
+
     /*
     TODO:
     1. create the item and set on click
@@ -34,7 +61,10 @@ function SideBarItem(props) {
             <img src={person.img} alt='' />
             <div className='item-text'>
                 <p>{person.nickname}</p>
-                <p>last chat</p>
+                <div className='bottom-text'>
+                    <p>{lastMessageText}</p>
+                    <p>{dateStr}</p>
+                </div>
             </div>
         </div>
     )

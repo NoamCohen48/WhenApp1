@@ -1,10 +1,11 @@
 import './ChatScreen.css'
 import DialogScreen from '../ChatDialog/DialogScreen.js';
 import SideBar from '../SideBar/SideBar.js';
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext, useRenderContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function ChatScreen(props) {
     let chatContext = useChatContext();
+    let _ = useRenderContext();
 
     // TODO: find a solution for fetching contacts, 
     // now doing it here, putting in context and extracting in side bar

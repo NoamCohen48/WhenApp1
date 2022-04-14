@@ -7,8 +7,6 @@ import TopBar from './dialogParts/TopBar';
 
 function DialogScreen(props) {
     let ChatContext = useChatContext();
-    const [, updateState] = useState();
-    const forceUpdate = useCallback(() => updateState({}), []);
 
     /*
     TODO:
@@ -30,7 +28,7 @@ function DialogScreen(props) {
                 <MessgaesConteiner CurrentChat={ChatContext.curChat}/>
             </div>
             <div className='bot-bar'>
-                <BottomBar update={forceUpdate}/>
+                <BottomBar />
             </div>
         </>
     )

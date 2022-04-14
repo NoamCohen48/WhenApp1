@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useChatContext } from '../../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext, useRenderContext } from '../../../../Components/ContextProvider/ChatContextProvider';
 import { addMessage } from '../../../../db/messages.js';
 import useRecorder from '../../../../Hooks/RecorderHook';
 import './BottomBar.css'
@@ -12,9 +12,14 @@ function BottomBar(props) {
     const uploudButtonVideo = useRef();
     const recorderBtn = useRef();
 
+    let forceUpdate = useRenderContext()
     let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
-
+    function onKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
 
     function sendMessage() {
         let text = inputText.current.value;
@@ -23,26 +28,17 @@ function BottomBar(props) {
             return;
         }
 
-        // TODO: add Message
-        // TODO: enter to send
-        addMessage(chatContext.curChat, true, 'text', text, Date());
-        props.update();
+        addMessage(chatContext.curChat, true, 'text', text, new Date());
+        forceUpdate()
 
         inputText.current.value = ''
     }
 
-    function onKeyPress(event) {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    }
-
     function handleChangeImg(event) {
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'img', file, Date());
-        props.update();
-
-
+        addMessage(chatContext.curChat, true, 'img', file, new Date());
+        forceUpdate()
+        // props.update();
     }
 
     useEffect(() => {
@@ -50,21 +46,21 @@ function BottomBar(props) {
             return;
         }
 
-        addMessage(chatContext.curChat, true, 'audio', audioURL, Date());
-        props.update();
+        addMessage(chatContext.curChat, true, 'audio', audioURL, new Date());
+        forceUpdate()
     }, [audioURL])
 
     function handleChangeVideo(event) {
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'video', file, Date());
-        props.update();
+        addMessage(chatContext.curChat, true, 'video', file, new Date());
+        forceUpdate()
     }
 
     function micClick() {
-        if(isRecording){
+        if (isRecording) {
             stopRecording();
         }
-        else{
+        else {
             startRecording()
         }
     }
