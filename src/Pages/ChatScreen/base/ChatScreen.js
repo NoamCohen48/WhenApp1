@@ -17,9 +17,7 @@ function ChatScreen(props) {
     if (chatContext.curUser === undefined) {
         return (
             <div className='container-lg chat-container c-shadow'>
-                <h1>
-                    Loading
-                </h1>
+                <img className='loading' src='https://media1.giphy.com/media/o0vwzuFwCGAFO/giphy.gif?cid=790b761134e48271ad5c493da81e35ff316e9569c83fa42c&rid=giphy.gif&ct=g' alt='' />;
             </div>
         )
     }

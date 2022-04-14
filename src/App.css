@@ -47,3 +47,8 @@ body {
 .hidden {
   display: none;
 }
+
+.openImage {
+  width: 98.4%;
+  height: 100%;
+}

@@ -19,9 +19,9 @@ function SideBar(props) {
 
     if (chatContext.contacts === undefined) {
         return (
-            <h1>
-                Loading
-            </h1>
+            <>
+                <img className='openImage' src='https://www.reddit.com/r/CatGifs/comments/48sql9/hacker_cat_at_it_again_taking_over_the_webs/' alt='' />;
+            </>
         )
     }
 
