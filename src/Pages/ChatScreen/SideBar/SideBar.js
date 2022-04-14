@@ -33,7 +33,7 @@ function SideBar(props) {
                 <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
                 <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" />
             </div>
-            <div className='contacts-list styled-scrollbars'>
+            <div className='contacts-list scroll--simple'>
                 {chatContext.contacts.map(username =>
                     <SideBarItem key={username} username={username} />
                 )}

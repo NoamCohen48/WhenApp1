@@ -1,5 +1,6 @@
 .dialog-screen .bot-bar {
-  height: 15%;
+  
+  height: 10%;
   background-color: #8bc6ca;
   display: flex;
   flex-direction: row;
