@@ -9,10 +9,10 @@ function TextMessage(props) {
             contect = <p>{props.message.data}</p>
             break;
         case 'audio':
+            contect = <audio src={props.message.data} controls></audio>
             break
         case 'video':
-            console.log('Mangoes and papayas are $2.79 a pound.');
-            // expected output: "Mangoes and papayas are $2.79 a pound."
+            contect = <video src={props.message.data} controls />
             break;
         case 'img':
             contect = <img src={props.message.data} alt='alt text' />
