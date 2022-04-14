@@ -72,6 +72,8 @@ function BottomBar(props) {
             </div>
 
             <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton} onChange={handleChangeImg}></input>
+            <input className="file-upload hidden" type="file" accept="video/*" ref={uploudButton} onChange={handleChangeVideo}></input>
+
 
 
         </>
