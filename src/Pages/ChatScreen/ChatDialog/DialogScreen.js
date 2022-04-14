@@ -20,6 +20,10 @@ function DialogScreen(props) {
     3. fetch info from db using useEffect
     */
 
+    if (ChatContext.curChat === undefined) {
+        return <h1>loading</h1>;
+    }
+
     return (
         <>
             <div className='top-bar'>

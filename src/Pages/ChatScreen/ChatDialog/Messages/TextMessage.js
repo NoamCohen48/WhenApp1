@@ -6,6 +6,7 @@ function TextMessage(props) {
         <>
                 <div className={className}>
                     <p>{props.message.data}</p>
+                    <p>{props.date.toDateString()}</p>
                 </div>
         </>
     )

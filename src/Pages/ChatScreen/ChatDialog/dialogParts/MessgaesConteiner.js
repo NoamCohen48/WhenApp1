@@ -22,7 +22,7 @@ function MessgaesConteiner(props) {
 
     if (messages === undefined) {
         return (
-            <h1>Empry</h1>
+            <h1>Empty</h1>
             )
     }
     let index = 0;
