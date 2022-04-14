@@ -8,7 +8,9 @@ function BottomBar(props) {
     let inputText = useRef();
     const [addon, setAddon] = useState(false);
     
-    const uploudButton = useRef();
+    const uploudButtonImg = useRef();
+    const uploudButtonVideo = useRef();
+
 
 
     function sendMessage() {
@@ -62,19 +64,17 @@ function BottomBar(props) {
 
     return (
         <>
-            <i className="bi bi-image" onClick={(event)=>{uploudButton.current.click(event)}}></i>
-            <i className="bi bi-camera-video" onClick={handleChangeVideo}></i>
-            <i className="bi bi-mic" onClick={handleChangeMic}></i>
+            <i className="bi bi-image" onClick={(event)=>{uploudButtonImg.current.click(event)}}></i>
+            <i className="bi bi-camera-video" onClick={(event)=>{uploudButtonVideo.current.click(event)}}></i>
+            <i className="bi bi-mic"></i>
 
             <div className="input-group">
                 <input type="text" className="form-control" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
                 <span className="input-group-text" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
             </div>
 
-            <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton} onChange={handleChangeImg}></input>
-            <input className="file-upload hidden" type="file" accept="video/*" ref={uploudButton} onChange={handleChangeVideo}></input>
-
-
+            <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButtonImg} onChange={handleChangeImg}></input>
+            <input className="file-upload hidden" type="file" accept="video/*" ref={uploudButtonVideo} onChange={handleChangeVideo}></input>
 
         </>
     )
