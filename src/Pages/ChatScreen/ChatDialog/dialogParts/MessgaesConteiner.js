@@ -12,7 +12,7 @@ import "../Messages/Messgaes.css"
 
 function MessgaesConteiner(props) {
     if (props.CurrentChat === undefined) {
-        return <img className='openImage' src='https://www.reddit.com/r/CatGifs/comments/48sql9/hacker_cat_at_it_again_taking_over_the_webs/' alt='' />;
+        return <h1>loading</h1>;
     }
 
     let person = findPerson({ username: props.CurrentChat })[0];
