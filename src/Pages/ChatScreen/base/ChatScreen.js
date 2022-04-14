@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-
 import './ChatScreen.css'
 import DialogScreen from '../ChatDialog/DialogScreen.js';
 import SideBar from '../SideBar/SideBar.js';
-import { findPerson } from '../../../db/users';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 
 function ChatScreen(props) {

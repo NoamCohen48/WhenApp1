@@ -49,7 +49,7 @@ body {
 }
 
 .openImage {
-  width: 107.3vh;
-  height: 79.4vh;
+  width: 100%;
+  height: 100%;
   border-radius: 4px;
 }
