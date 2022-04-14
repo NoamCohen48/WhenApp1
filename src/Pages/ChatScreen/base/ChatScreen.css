@@ -16,30 +16,6 @@
   margin: 0%;
 }
 
-/* ScrollBar */
-
-.styled-scrollbars {
-  /* Foreground, Background */
-  /* scrollbar-color: #999 #333; */
-}
-.styled-scrollbars::-webkit-scrollbar {
-  width: 15px; /* Mostly for vertical scrollbars */
-}
-.styled-scrollbars::-webkit-scrollbar-thumb {
-  /* Foreground */
-  background: rgb(2, 104, 134);
-
-  border-style: solid;
-  border-color: rgb(187, 233, 247);
-  border-radius: 8px;
-  border-width: 3px;
-}
-.styled-scrollbars::-webkit-scrollbar-track {
-  /* Background */
-  background: rgb(187, 233, 247);
-
-  border-radius: 6px;
-}
 
 .dialog-screen {
   padding: 0;

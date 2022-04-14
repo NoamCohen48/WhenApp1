@@ -26,7 +26,7 @@ function DialogScreen(props) {
             <div className='top-bar'>
                 <TopBar CurrentChat={ChatContext.curChat} />
             </div>
-            <div className='messages-conteiner'>
+            <div className='messages-conteiner scroll--simple'>
                 <MessgaesConteiner CurrentChat={ChatContext.curChat}/>
             </div>
             <div className='bot-bar'>
