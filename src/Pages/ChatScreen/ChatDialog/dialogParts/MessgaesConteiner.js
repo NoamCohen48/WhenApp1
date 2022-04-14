@@ -25,26 +25,13 @@ function MessgaesConteiner(props) {
             <h1>Empty</h1>
         )
     }
-    let index = 0;
 
     console.log("messages", messages)
     return (
         <>
             {
                 messages.map(message => {
-
-                    if (message.type === "text") {
-                        return <TextMessage className="message" message={message} />
-                    }
-                    if (message.type === "audio") {
-                        return <AudioMessage message={message} />
-                    }
-                    if (message.type === "video") {
-                        return <VideoMessage message={message} />
-                    }
-                    if (message.type === "img") {
-                        return <ImgMessage message={message} />
-                    }
+                    return <TextMessage className="message" message={message} />
                 })
             }
         </>
