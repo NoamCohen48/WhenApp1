@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
 import SideBarItem from './SideBarItem';
 import './SideBar.css'
@@ -28,7 +28,7 @@ function SideBar(props) {
     return (
         <>
             <div className='top-bar'>
-                <img src={user.img} />
+                <img src={user.img} alt='' />
                 <p>{user.nickname}</p>
                 <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
                 <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" />

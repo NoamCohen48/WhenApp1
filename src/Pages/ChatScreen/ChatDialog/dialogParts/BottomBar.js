@@ -7,7 +7,6 @@ import './BottomBar.css'
 function BottomBar(props) {
     let chatContext = useChatContext();
     let inputText = useRef();
-    const [addon, setAddon] = useState(false);
 
     const uploudButtonImg = useRef();
     const uploudButtonVideo = useRef();

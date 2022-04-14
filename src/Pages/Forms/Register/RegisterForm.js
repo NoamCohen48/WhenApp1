@@ -4,7 +4,7 @@ import '../Login/LoginForm.css'
 
 import './RegisterForm.css'
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { findPerson, registerPerson } from '../../../db/users.js'
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';

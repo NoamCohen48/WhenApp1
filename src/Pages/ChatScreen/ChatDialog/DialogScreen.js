@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
-import { receiveMessages } from '../../../db/messages';
-import { findPerson } from '../../../db/users';
 import BottomBar from './dialogParts/BottomBar';
 import MessgaesConteiner from './dialogParts/MessgaesConteiner.js';
 import TopBar from './dialogParts/TopBar';

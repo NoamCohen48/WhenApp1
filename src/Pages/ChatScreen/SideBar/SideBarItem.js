@@ -31,7 +31,7 @@ function SideBarItem(props) {
 
     return (
         <div className='contact-item' onClick={selectChat}>
-            <img src={person.img} />
+            <img src={person.img} alt='' />
             <div className='item-text'>
                 <p>{person.nickname}</p>
                 <p>last chat</p>

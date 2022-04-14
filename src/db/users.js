@@ -47,7 +47,7 @@ export function findPerson({ username, nickname, password }) {
 export function addContact(usernameAddTo, usernameToAdd) {
     let person = users_db.filter(person => person.username === usernameAddTo);
 
-    if (person.length == 0) {
+    if (person.length === 0) {
         return 'error'
     }
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { createContext, useState } from 'react';
 import { findPerson } from '../../db/users';
 
