@@ -64,7 +64,7 @@ addContact('admin', 'mike');
 addContact('admin', 'jhon');
 addContact('admin', 'demargorgon the world destroyer');
 
-addMessage("mike", true, "text", "hello there mike?", Date());
-addMessage("mike", false, "text", "yeah", Date());
-addMessage("jhon", true, "text", "bla", Date());
+addMessage("mike", true, "text", "hello there mike?", new Date());
+addMessage("mike", false, "text", "yeah", new Date());
+addMessage("jhon", true, "text", "bla", new Date());
 // let query = findPerson({username:'hello'})

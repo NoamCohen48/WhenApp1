@@ -18,7 +18,6 @@ export function receiveMessages(contact) {
     if (!(typeof contact === 'string' || contact instanceof String)) {
         return 'error';
     }
-    console.log(messages_db)
     return messages_db.get(contact)
 }
 
