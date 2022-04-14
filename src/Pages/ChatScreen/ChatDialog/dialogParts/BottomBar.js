@@ -11,6 +11,7 @@ function BottomBar(props) {
 
     const uploudButtonImg = useRef();
     const uploudButtonVideo = useRef();
+    const recorderBtn = useRef();
 
     let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
@@ -60,13 +61,22 @@ function BottomBar(props) {
         props.update();
     }
 
+    function micClick() {
+        if(isRecording){
+            stopRecording();
+        }
+        else{
+            startRecording()
+        }
+    }
+
     return (
         <>
             <i className="bi bi-image" onClick={(event) => { uploudButtonImg.current.click(event) }}></i>
             <i className="bi bi-camera-video" onClick={(event) => { uploudButtonVideo.current.click(event) }}></i>
-            <div className='recorder'>
-                <i className="bi bi-mic" onClick={startRecording} disabled={isRecording} ></i>
-                <i className="bi bi-record-fill" onClick={stopRecording} disabled={!isRecording}></i>
+            <div className={`recorder ${isRecording ? ' recording' : ''}`} ref={recorderBtn} onClick={micClick}>
+                <i className="bi bi-mic" disabled={isRecording} ></i>
+                <i className="bi bi-record-fill" disabled={!isRecording}></i>
             </div>
 
             {/* <audio src={audioURL} controls /> */}
