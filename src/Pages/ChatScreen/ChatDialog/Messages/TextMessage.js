@@ -9,7 +9,7 @@ function TextMessage(props) {
             contect = <p>{props.message.data}</p>
             break;
         case 'audio':
-            contect = <audio src={props.message.data} controls></audio>
+            contect = <audio src={props.message.data} controls />
             break
         case 'video':
             contect = <video src={props.message.data} controls />
@@ -24,7 +24,7 @@ function TextMessage(props) {
     const date = new Date();
     const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
     const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-    let dateStr = `${hour}:${minutes}, ${year}/${month}/${day}`;
+    let dateStr = `${hour}:${minutes}, ${day}/${month}/${year}`;
 
     return (
         <>

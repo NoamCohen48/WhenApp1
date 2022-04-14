@@ -26,7 +26,6 @@ function MessgaesConteiner(props) {
         )
     }
 
-    console.log("messages", messages)
     return (
         <>
             {

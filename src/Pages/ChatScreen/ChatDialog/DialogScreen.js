@@ -5,7 +5,6 @@ import { findPerson } from '../../../db/users';
 import BottomBar from './dialogParts/BottomBar';
 import MessgaesConteiner from './dialogParts/MessgaesConteiner.js';
 import TopBar from './dialogParts/TopBar';
-import './DialogScreen.css'
 
 
 function DialogScreen(props) {

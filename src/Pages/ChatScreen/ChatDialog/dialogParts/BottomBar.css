@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  border-bottom-right-radius: 5px;
 }
 
 .dialog-screen .bot-bar > * {
@@ -31,6 +33,6 @@
 }
 
 .dialog-screen .bot-bar > .input-group {
-    position: relative;
-    top: 2px;
+  position: relative;
+  top: 2px;
 }

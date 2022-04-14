@@ -1,15 +1,18 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useChatContext } from '../../../../Components/ContextProvider/ChatContextProvider';
 import { addMessage } from '../../../../db/messages.js';
+import useRecorder from '../../../../Hooks/RecorderHook';
 import './BottomBar.css'
 
 function BottomBar(props) {
     let chatContext = useChatContext();
     let inputText = useRef();
     const [addon, setAddon] = useState(false);
-    
+
     const uploudButtonImg = useRef();
     const uploudButtonVideo = useRef();
+
+    let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
 
 
@@ -36,37 +39,33 @@ function BottomBar(props) {
 
     function handleChangeImg(event) {
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'img', file, Date());       
+        addMessage(chatContext.curChat, true, 'img', file, Date());
         props.update();
 
-        inputText.current.value = ''
 
     }
 
-    function handleChangeMic(event) {
-
-        addMessage(chatContext.curChat, true, 'audio', "audio", Date());
+    useEffect(() => {
+        addMessage(chatContext.curChat, true, 'audio', audioURL, Date());
         props.update();
-
-        inputText.current.value = ''
-        
-    }
+    }, [audioURL])
 
     function handleChangeVideo(event) {
-
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'video', file, Date());  
+        addMessage(chatContext.curChat, true, 'video', file, Date());
         props.update();
-
-        inputText.current.value = ''
-        
     }
 
     return (
         <>
-            <i className="bi bi-image" onClick={(event)=>{uploudButtonImg.current.click(event)}}></i>
-            <i className="bi bi-camera-video" onClick={(event)=>{uploudButtonVideo.current.click(event)}}></i>
-            <i className="bi bi-mic"></i>
+            <i className="bi bi-image" onClick={(event) => { uploudButtonImg.current.click(event) }}></i>
+            <i className="bi bi-camera-video" onClick={(event) => { uploudButtonVideo.current.click(event) }}></i>
+            <div className='recorder'>
+                <i className="bi bi-mic" onClick={startRecording} disabled={isRecording} ></i>
+                <i className="bi bi-record-fill" onClick={stopRecording} disabled={!isRecording}></i>
+            </div>
+
+            <audio src={audioURL} controls />
 
             <div className="input-group">
                 <input type="text" className="form-control" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />

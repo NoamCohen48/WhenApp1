@@ -1,21 +1,28 @@
-.top-bar .chat-about {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: medium;
-    height: 100%;
-    width: 100%;
+.dialog-screen .top-bar {
+  height: 15%;
+  background-color: #8bc6ca;
+
+  border-top-right-radius: 5px;
 }
 
-    .top-bar .chat-about .avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-left: 2vh;
-    }
+.top-bar .chat-about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: medium;
+  height: 100%;
+  width: 100%;
+}
 
-    .top-bar .chat-about .name {
-        font-weight: 600;
-        font-size: 4vh;
-        margin-left: 2vh;
-    }
+.top-bar .chat-about .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 2vh;
+}
+
+.top-bar .chat-about .name {
+  font-weight: 600;
+  font-size: 4vh;
+  margin-left: 2vh;
+}
