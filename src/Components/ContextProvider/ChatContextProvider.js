@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useCallback } from 'react';
+import React, { useContext, useEffect, useCallback, useReducer } from 'react';
 import { createContext, useState } from 'react';
 import { findPerson } from '../../db/users';
 
@@ -13,12 +13,25 @@ export function useRenderContext() {
     return useContext(RenderContext);
 }
 
+function RenderContextProvider(props) {
+    const [state, updateState] = useState(0);
+    const forceUpdate = useCallback(() => updateState({}), []);
+
+    // const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+
+    return (
+        <RenderContext.Provider value={{forceUpdate}} >
+            {props.children}
+        </RenderContext.Provider>
+    )
+}
+
 function ChatContextProvider(props) {
     const [contacts, setContacts] = useState(undefined);
     const [curChat, setCurChat] = useState(undefined);
     const [curUser, setCurUser] = useState(undefined);
 
-    useEffect(()=>{
+    useEffect(() => {
         let usernameStorage = localStorage.getItem('username');
         if (usernameStorage) {
             userEntered(usernameStorage);
@@ -68,9 +81,9 @@ function ChatContextProvider(props) {
 
     return (
         <ChatContext.Provider value={context}>
-            <RenderContext.Provider value={forceUpdate} >
+            <RenderContextProvider>
                 {props.children}
-            </RenderContext.Provider>
+            </RenderContextProvider>
         </ChatContext.Provider>
     )
 }

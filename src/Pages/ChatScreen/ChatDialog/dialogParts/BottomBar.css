@@ -58,6 +58,7 @@
 
 .dialog-screen .bot-bar .recorder > i:nth-child(2) {
   display: none;
+
 }
 
 .dialog-screen .bot-bar .recorder.recording > i:nth-child(1) {

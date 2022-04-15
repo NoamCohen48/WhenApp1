@@ -12,10 +12,8 @@ function TopBar(props) {
 
             <div className="chat-about">
                 <img className="avatar" src={person.img} />
-                <h1 className="name">{props.CurrentChat}</h1>
+                <h1 className="name">{person.nickname}</h1>
             </div>
-
-
         </>
     )
 }

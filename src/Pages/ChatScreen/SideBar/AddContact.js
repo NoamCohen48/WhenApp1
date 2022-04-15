@@ -15,8 +15,6 @@ function AddContact(props) {
     }
 
     function addContact() {
-        // TODO: add validate input
-
         let username = usernameInput.current.value;
 
         let person = findPerson({ username: username })

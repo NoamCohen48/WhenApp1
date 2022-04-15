@@ -12,7 +12,7 @@ function BottomBar(props) {
     const uploudButtonVideo = useRef();
     const recorderBtn = useRef();
 
-    let forceUpdate = useRenderContext()
+    let {forceUpdate} = useRenderContext()
     let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
     function onKeyPress(event) {

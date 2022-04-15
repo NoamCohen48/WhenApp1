@@ -1,8 +1,8 @@
 import React from 'react';
 import { findPerson } from '../../../../db/users.js';
 import { receiveMessages } from '../../../../db/messages.js';
-import TextMessage from '../Messages/TextMessage';
-import "../Messages/Messgaes.css"
+import TextMessage from '../Messages/Message.js';
+import "../Messages/Message.css"
 
 
 function MessgaesConteiner(props) {

@@ -28,19 +28,19 @@ function SideBarItem(props) {
     else {
         switch (lastMessage.type) {
             case 'text':
-                lastMessageText = lastMessage.data;
+                lastMessageText = <p><i className="bi bi-chat-left-dots"></i>{lastMessage.data}</p>;
                 break;
             case 'audio':
-                lastMessageText = 'audio';
+                lastMessageText = <p><i className="bi bi-file-earmark-music"></i>audio</p>;
                 break
             case 'video':
-                lastMessageText = 'video';
+                lastMessageText = <p><i className="bi bi-file-earmark-play"></i>video</p>;
                 break;
             case 'img':
-                lastMessageText = 'image';
+                lastMessageText = <p><i className="bi bi-file-image"></i>image</p>;
                 break
             default:
-                lastMessageText = 'message';
+                lastMessageText = <p><i className="bi bi-question-circle-fill"></i>unkown</p>;
         }
 
         const date = lastMessage.date;
@@ -61,7 +61,7 @@ function SideBarItem(props) {
             <div className='item-text'>
                 <p>{person.nickname}</p>
                 <div className='bottom-text'>
-                    <p>{lastMessageText}</p>
+                    {lastMessageText}
                     <p>{dateStr}</p>
                 </div>
             </div>

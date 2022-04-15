@@ -6,11 +6,7 @@ import { useEffect } from 'react';
 
 function ChatScreen(props) {
     let chatContext = useChatContext();
-    let _ = useRenderContext();
-
-    useEffect(()=>{
-        
-    }, [])
+    let {  } = useRenderContext();
 
     // TODO: find a solution for fetching contacts, 
     // now doing it here, putting in context and extracting in side bar
