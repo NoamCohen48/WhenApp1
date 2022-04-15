@@ -1,5 +1,5 @@
 import React from 'react';
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext } from '../../../Contexts/ChatContextProvider';
 import { receiveMessages } from '../../../db/messages';
 import { findPerson } from '../../../db/users';
 

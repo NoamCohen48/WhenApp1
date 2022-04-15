@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useChatContext, useRenderContext } from '../../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext } from '../../../../Contexts/ChatContextProvider';
+import { useRenderContext } from '../../../../Contexts/RenderContextProvider';
 import { addMessage } from '../../../../db/messages.js';
 import useRecorder from '../../../../Hooks/RecorderHook';
 import './BottomBar.css'
@@ -12,7 +13,7 @@ function BottomBar(props) {
     const uploudButtonVideo = useRef();
     const recorderBtn = useRef();
 
-    let {forceUpdate} = useRenderContext()
+    let {forceUpdate} = useRenderContext();
     let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
     function onKeyPress(event) {

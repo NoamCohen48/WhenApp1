@@ -6,8 +6,8 @@ import './RegisterForm.css'
 
 import { useNavigate } from 'react-router-dom';
 
-import { findPerson, registerPerson } from '../../../db/users.js'
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { findPerson, registerPerson } from '../../db/users.js'
+import { useChatContext } from '../../Contexts/ChatContextProvider';
 
 function RegisterForm(props) {
 

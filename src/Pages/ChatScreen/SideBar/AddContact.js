@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext } from '../../../Contexts/ChatContextProvider.js';
 import { findPerson } from '../../../db/users.js'
 
 function AddContact(props) {

@@ -1,29 +1,12 @@
 import React, { useContext, useEffect, useCallback, useReducer } from 'react';
 import { createContext, useState } from 'react';
-import { findPerson } from '../../db/users';
+import { findPerson } from '../db/users';
+import { RenderContextProvider } from './RenderContextProvider';
 
 const ChatContext = createContext();
-const RenderContext = createContext();
 
 export function useChatContext() {
     return useContext(ChatContext);
-}
-
-export function useRenderContext() {
-    return useContext(RenderContext);
-}
-
-function RenderContextProvider(props) {
-    const [state, updateState] = useState(0);
-    const forceUpdate = useCallback(() => updateState({}), []);
-
-    // const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-
-    return (
-        <RenderContext.Provider value={{forceUpdate}} >
-            {props.children}
-        </RenderContext.Provider>
-    )
 }
 
 function ChatContextProvider(props) {
@@ -75,9 +58,6 @@ function ChatContextProvider(props) {
         curChat: curChat,
         setCurChat: setCurChat,
     }
-
-    const [, updateState] = useState(0);
-    const forceUpdate = useCallback(() => updateState((prev) => prev + 1), []);
 
     return (
         <ChatContext.Provider value={context}>

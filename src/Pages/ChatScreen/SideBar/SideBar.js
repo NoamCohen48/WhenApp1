@@ -1,8 +1,8 @@
 import React from 'react';
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
-import SideBarItem from './SideBarItem';
+import SideBarItem from './SideBarItem.js';
 import './SideBar.css'
 import AddContact from './AddContact';
+import { useChatContext } from '../../../Contexts/ChatContextProvider.js';
 
 function SideBar(props) {
     const chatContext = useChatContext();
@@ -29,7 +29,10 @@ function SideBar(props) {
         <>
             <div className='top-bar'>
                 <img src={user.img} alt='' />
-                <p>{user.nickname}</p>
+                <div className='user-info'>
+                    <p>{user.nickname}</p>
+                    <p>{user.username}</p>
+                </div>
                 <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
                 <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" />
             </div>

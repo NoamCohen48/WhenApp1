@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useChatContext } from '../../../Components/ContextProvider/ChatContextProvider';
+import { useChatContext } from '../../../Contexts/ChatContextProvider';
 import BottomBar from './dialogParts/BottomBar';
 import MessgaesConteiner from './dialogParts/MessgaesConteiner.js';
 import TopBar from './dialogParts/TopBar';
@@ -10,8 +10,6 @@ function DialogScreen(props) {
 
     /*
     TODO:
-    1. add placeholder
-    2. add messeges (4 types)
     3. fetch info from db using useEffect
     */
 

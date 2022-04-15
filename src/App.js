@@ -6,11 +6,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import ChatScreen from './Pages/ChatScreen/base/ChatScreen';
-import LoginForm from './Pages/Forms/Login/LoginForm.js';
-import RegisterForm from './Pages/Forms/Register/RegisterForm';
+import LoginForm from './Pages/Login/LoginForm.js';
+import RegisterForm from './Pages/Register/RegisterForm';
 
 import './db/messages.js'
-import ChatContextProvider from './Components/ContextProvider/ChatContextProvider';
+import ChatContextProvider from './Contexts/ChatContextProvider.js';
 
 function App(props) {
   return (
