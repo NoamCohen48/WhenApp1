@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useCallback, useReducer } from 'react';
-import { createContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { findPerson } from '../db/users';
-import { RenderContextProvider } from './RenderContextProvider';
 
 const UserContext = createContext();
 

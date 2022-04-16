@@ -1,12 +1,8 @@
 import React, { useRef } from 'react';
-
-import './LoginForm.css'
-
 import { Link, useNavigate } from 'react-router-dom';
-
-import { findPerson } from '../../db/users.js'
-import { useChatContext } from '../../Contexts/ChatContextProvider';
 import { useUserContext } from '../../Contexts/UserContextProvider';
+import { findPerson } from '../../db/users.js';
+import './LoginForm.css';
 
 function LoginForm(props) {
     const usernameInput = useRef();
@@ -24,14 +20,15 @@ function LoginForm(props) {
 
         // TODO: do it async from db
         let person = findPerson({ username: username, password: password })
-        if (person.length === 1) {
 
-            userContext.userEntered(username)
-            navigate("/Chat") // need to transfer info about who registered
+        if (person.length !== 1) {
+            // show error
+            errorText.current.style.visibility = "visible";
+            return;
         }
 
-        // show error
-        errorText.current.style.visibility = "visible";
+        userContext.userEntered(username)
+        navigate("/Chat")
     }
 
     // TODO: add icons near input

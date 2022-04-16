@@ -1,14 +1,8 @@
 import React, { useRef, useState } from 'react';
-
-import '../Login/LoginForm.css'
-
-import './RegisterForm.css'
-
 import { useNavigate } from 'react-router-dom';
-
-import { findPerson, registerPerson } from '../../db/users.js'
-import { useChatContext } from '../../Contexts/ChatContextProvider';
 import { useUserContext } from '../../Contexts/UserContextProvider';
+import { findPerson, registerPerson } from '../../db/users.js';
+import './RegisterForm.css';
 
 function RegisterForm(props) {
     const userContext = useUserContext()

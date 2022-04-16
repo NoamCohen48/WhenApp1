@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useCallback, useReducer } from 'react';
-import { createContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
 const RenderContext = createContext();
 
