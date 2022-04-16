@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { useChatContext } from '../../../Contexts/ChatContextProvider.js';
+import { useUserContext } from '../../../Contexts/UserContextProvider.js';
 import { findPerson } from '../../../db/users.js'
 
 function AddContact(props) {
-    let chatContext = useChatContext();
+    const userContext = useUserContext()
+
     const usernameInput = useRef(undefined)
     const closeBtn = useRef(undefined)
     const errorText = useRef();
@@ -25,19 +27,19 @@ function AddContact(props) {
             return;
         }
 
-        if (username === chatContext.curUser.username) {
+        if (username === userContext.curUser.username) {
             errorText.current.style.visibility = "visible";
             errorText.current.textContent = "You can't add yourself!";
             return;
         }
 
-        if (chatContext.contacts.filter(personUserName => personUserName === username).length >= 1) {
+        if (props.contacts.filter(personUserName => personUserName === username).length >= 1) {
             errorText.current.style.visibility = "visible";
             errorText.current.textContent = "User already present.";
             return;
         }
 
-        chatContext.addContact(usernameInput.current.value);
+        props.addContact(usernameInput.current.value);
 
         closeBtn.current.click();
         usernameInput.current.value = ''

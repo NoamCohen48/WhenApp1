@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { findPerson } from '../../db/users.js'
 import { useChatContext } from '../../Contexts/ChatContextProvider';
+import { useUserContext } from '../../Contexts/UserContextProvider';
 
 function LoginForm(props) {
     const usernameInput = useRef();
@@ -13,7 +14,7 @@ function LoginForm(props) {
     const errorText = useRef();
 
     const navigate = useNavigate();
-    const chatContext = useChatContext();
+    const userContext = useUserContext()
 
     function Login(event) {
         event.preventDefault();
@@ -25,7 +26,7 @@ function LoginForm(props) {
         let person = findPerson({ username: username, password: password })
         if (person.length === 1) {
 
-            chatContext.userEntered(username)
+            userContext.userEntered(username)
             navigate("/Chat") // need to transfer info about who registered
         }
 

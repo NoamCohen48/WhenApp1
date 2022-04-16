@@ -8,8 +8,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { findPerson, registerPerson } from '../../db/users.js'
 import { useChatContext } from '../../Contexts/ChatContextProvider';
+import { useUserContext } from '../../Contexts/UserContextProvider';
 
 function RegisterForm(props) {
+    const userContext = useUserContext()
 
     const usernameInput = useRef();
     const passwordInput = useRef();
@@ -23,7 +25,6 @@ function RegisterForm(props) {
     const [file, setFile] = useState("/resources/emptyAvatar.jpg");
 
     const navigate = useNavigate();
-    const chatContext = useChatContext();
 
     function Register(event) {
 
@@ -37,8 +38,6 @@ function RegisterForm(props) {
         let person = findPerson({ username: username })
 
         if (password !== confirmPassword) {
-            // errorText.current.style.visibility = "visible";
-            // errorText.current.textContent = "Passwords are not the same.";
             setErrorText("Passwords are not the same")
             return;
         }
@@ -49,15 +48,13 @@ function RegisterForm(props) {
         }
 
         if (person.length !== 0) {
-
             setErrorText("User already been taken")
             return
-
         }
 
         // TODO: do it async from db
         registerPerson(username, nickname, password, file);
-        chatContext.userEntered(username);
+        userContext.userEntered(username);
         navigate("../Chat");
     }
 
