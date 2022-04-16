@@ -17,7 +17,8 @@ function RegisterForm(props) {
     const nicknameInput = useRef();
     const uploudButton = useRef();
     const avaterInput = useRef();
-    const errorText = useRef();
+
+    const [errorText, setErrorText] = useState('')
 
     const [file, setFile] = useState("/resources/emptyAvatar.jpg");
 
@@ -25,6 +26,7 @@ function RegisterForm(props) {
     const chatContext = useChatContext();
 
     function Register(event) {
+
         event.preventDefault();
 
         let username = usernameInput.current.value;
@@ -35,23 +37,28 @@ function RegisterForm(props) {
         let person = findPerson({ username: username })
 
         if (password !== confirmPassword) {
-            errorText.current.style.visibility = "visible";
-            errorText.current.textContent = "Passwords are not the same.";
+            // errorText.current.style.visibility = "visible";
+            // errorText.current.textContent = "Passwords are not the same.";
+            setErrorText("Passwords are not the same")
             return;
         }
 
-        if (person.length === 0) {
-            // TODO: do it async from db
-            registerPerson(username, nickname, password, file);
-
-            chatContext.userEntered(username);
-            navigate("../Chat");
+        if (file === "/resources/emptyAvatar.jpg") {
+            setErrorText("pls upload an image")
+            return;
         }
 
-        else {
-            errorText.current.style.visibility = "visible";
-            errorText.current.textContent = "User already been taken."
+        if (person.length !== 0) {
+
+            setErrorText("User already been taken")
+            return
+
         }
+
+        // TODO: do it async from db
+        registerPerson(username, nickname, password, file);
+        chatContext.userEntered(username);
+        navigate("../Chat");
     }
 
     function UploudImage(event) {
@@ -86,7 +93,7 @@ function RegisterForm(props) {
                         </div>
                         <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButton} onChange={handleChange}></input>
                         <button type="submit" className="btn btn-primary btn-lg rounded-pill c-shadow">Register</button>
-                        <p ref={errorText} className='error'></p>
+                        <p className='error'>{errorText}</p>
                     </form>
                 </div>
             </div>

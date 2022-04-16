@@ -162,25 +162,14 @@
 }
 
 .register-container form .error {
-  visibility: hidden;
-  transition: visibility 0.1s ease-in-out;
-  font-weight: 450;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  color: rgb(255, 0, 0);
-}
-
-.error {
-  visibility: hidden;
-  transition: visibility 0.1s ease-in-out;
   position: relative;
   top: 2px;
   left: 4px;
+
   font-weight: 450;
   font-size: 1em;
   letter-spacing: 0.1em;
   color: rgb(255, 0, 0);
-  
 }
 
 .register-container .c-shadow,

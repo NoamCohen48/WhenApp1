@@ -14,12 +14,12 @@ function ChatContextProvider(props) {
     const [curChat, setCurChat] = useState(undefined);
     const [curUser, setCurUser] = useState(undefined);
 
-    useEffect(() => {
-        let usernameStorage = localStorage.getItem('username');
-        if (usernameStorage) {
-            userEntered(usernameStorage);
-        }
-    }, [])
+    // useEffect(() => {
+    //     let usernameStorage = localStorage.getItem('username');
+    //     if (usernameStorage) {
+    //         userEntered(usernameStorage);
+    //     }
+    // }, [])
 
     // fetching info when a new user entred
     function userEntered(username) {
