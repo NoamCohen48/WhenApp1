@@ -11,18 +11,30 @@ import RegisterForm from './Pages/Register/RegisterForm';
 
 import './db/messages.js'
 import ChatContextProvider from './Contexts/ChatContextProvider.js';
+import { UserContextProvider } from './Contexts/UserContextProvider';
+import { RenderContextProvider } from './Contexts/RenderContextProvider';
 
 function App(props) {
   return (
-    <ChatContextProvider >
+    <UserContextProvider >
       <BrowserRouter>
         <Routes>
+
           <Route path="/" element={<LoginForm />} />
+
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/Chat" element={<ChatScreen />} />
+
+          <Route path="/Chat" element={
+            <ChatContextProvider>
+              <RenderContextProvider>
+                <ChatScreen />
+              </RenderContextProvider>
+            </ChatContextProvider>
+          } />
+
         </Routes>
       </BrowserRouter>
-    </ChatContextProvider>
+    </UserContextProvider>
   );
 }
 

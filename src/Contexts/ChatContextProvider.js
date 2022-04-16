@@ -12,14 +12,10 @@ export function useChatContext() {
 
 function ChatContextProvider(props) {
     const [curChat, setCurChat] = useState(undefined);
-    
+
     return (
-        <ChatContext.Provider value={{curChat, setCurChat}}>
-            <UserContextProvider>
-                <RenderContextProvider>
-                    {props.children}
-                </RenderContextProvider>
-            </UserContextProvider>
+        <ChatContext.Provider value={{ curChat, setCurChat }}>
+            {props.children}
         </ChatContext.Provider>
     )
 }
