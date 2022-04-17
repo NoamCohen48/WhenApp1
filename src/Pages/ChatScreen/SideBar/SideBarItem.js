@@ -5,16 +5,15 @@ import { findPerson } from '../../../db/users';
 
 
 function SideBarItem(props) {
-    let username = props.username;
     let ChatContext = useChatContext();
 
+    let person = findPerson({ username: props.username })[0];
+
     function selectChat(event) {
-        ChatContext.setCurChat(username);
+        ChatContext.setCurChat(person);
     }
 
-    let person = findPerson({ username: username })[0];
-
-    let messages = receiveMessages(username)
+    let messages = receiveMessages(person.username)
 
     var lastMessage = messages[messages.length - 1];
 

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import SideBarItem from './SideBarItem.js';
-import './SideBar.css'
-import AddContact from './AddContact';
-import { useChatContext } from '../../../Contexts/ChatContextProvider.js';
 import { useUserContext } from '../../../Contexts/UserContextProvider.js';
+import AddContact from './AddContact';
+import './SideBar.css';
+import SideBarItem from './SideBarItem.js';
 
 function SideBar(props) {
     const userContext = useUserContext()

@@ -1,19 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useChatContext } from '../../../../Contexts/ChatContextProvider';
 import { useRenderContext } from '../../../../Contexts/RenderContextProvider';
 import { addMessage } from '../../../../db/messages.js';
 import useRecorder from '../../../../Hooks/RecorderHook';
-import './BottomBar.css'
+import './InputBar.css';
 
-function BottomBar(props) {
+function InputBar(props) {
     let chatContext = useChatContext();
+
     let inputText = useRef();
 
     const uploudButtonImg = useRef();
     const uploudButtonVideo = useRef();
     const recorderBtn = useRef();
 
-    let {forceUpdate} = useRenderContext();
+    let { forceUpdate } = useRenderContext();
     let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
     function onKeyPress(event) {
@@ -29,7 +30,7 @@ function BottomBar(props) {
             return;
         }
 
-        addMessage(chatContext.curChat, true, 'text', text, new Date());
+        addMessage(chatContext.curChat.username, true, 'text', text, new Date());
         forceUpdate()
 
         inputText.current.value = ''
@@ -37,7 +38,7 @@ function BottomBar(props) {
 
     function handleChangeImg(event) {
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'img', file, new Date());
+        addMessage(chatContext.curChat.username, true, 'img', file, new Date());
         forceUpdate()
         // props.update();
     }
@@ -47,13 +48,13 @@ function BottomBar(props) {
             return;
         }
 
-        addMessage(chatContext.curChat, true, 'audio', audioURL, new Date());
+        addMessage(chatContext.curChat.username, true, 'audio', audioURL, new Date());
         forceUpdate()
     }, [audioURL])
 
     function handleChangeVideo(event) {
         let file = URL.createObjectURL(event.target.files[0]);
-        addMessage(chatContext.curChat, true, 'video', file, new Date());
+        addMessage(chatContext.curChat.username, true, 'video', file, new Date());
         forceUpdate()
     }
 
@@ -89,4 +90,4 @@ function BottomBar(props) {
     )
 }
 
-export default BottomBar;
+export default InputBar;

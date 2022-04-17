@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import { useChatContext } from '../../../Contexts/ChatContextProvider.js';
 import { useUserContext } from '../../../Contexts/UserContextProvider.js';
-import { findPerson } from '../../../db/users.js'
+import { findPerson } from '../../../db/users.js';
 
 function AddContact(props) {
     const userContext = useUserContext()

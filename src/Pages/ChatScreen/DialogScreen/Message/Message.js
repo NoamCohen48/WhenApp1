@@ -1,6 +1,7 @@
 import React from 'react';
+import './Message.css';
 
-function TextMessage(props) {
+function Message(props) {
     let className = props.className.concat(' ', props.message.iSent ? ' my-message' : ' other-message');
 
     let contect;
@@ -36,4 +37,4 @@ function TextMessage(props) {
     )
 }
 
-export default TextMessage;
+export default Message;

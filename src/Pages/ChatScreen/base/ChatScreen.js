@@ -1,10 +1,8 @@
-import './ChatScreen.css'
-import DialogScreen from '../ChatDialog/DialogScreen.js';
-import SideBar from '../SideBar/SideBar.js';
-import { useEffect } from 'react';
-import { useChatContext } from '../../../Contexts/ChatContextProvider';
 import { useRenderContext } from '../../../Contexts/RenderContextProvider';
 import { useUserContext } from '../../../Contexts/UserContextProvider';
+import DialogScreen from '../DialogScreen/DialogScreen.js';
+import SideBar from '../SideBar/SideBar.js';
+import './ChatScreen.css';
 
 function ChatScreen(props) {
     const userContext = useUserContext()
