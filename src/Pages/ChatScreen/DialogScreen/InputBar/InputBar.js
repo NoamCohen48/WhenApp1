@@ -79,7 +79,7 @@ function InputBar(props) {
             {/* <audio src={audioURL} controls /> */}
 
             <div className="input-group">
-                <input type="text" className="form-control" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
+                <input type="text" className="form-control input" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
                 <span className="input-group-text" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
             </div>
 

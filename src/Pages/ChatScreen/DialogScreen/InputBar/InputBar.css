@@ -76,6 +76,9 @@
   animation-duration: 0.8s;
 }
 
+.input {
+  font-size: 17px;
+}
 @keyframes inOut {
   from {
     transform: scale(0.2);
