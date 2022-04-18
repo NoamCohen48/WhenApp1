@@ -22,7 +22,7 @@ function ChatScreen(props) {
 
     return (
         <>
-            <div className='container-lg chat-container c-shadow'>
+            <div className='container-xl chat-container c-shadow'>
                 <div className='row'>
                     <div className="col-4 side-bar" >
                         <SideBar />

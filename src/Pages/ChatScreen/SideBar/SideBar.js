@@ -44,7 +44,7 @@ function SideBar(props) {
                 <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
                 <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" contacts={contacts} addContact={addContact}/>
             </div>
-            <div className='contacts-list scroll--simple'>
+            <div className='contacts-list scroll--simple list-group'>
                 {contacts.map(username =>
                     <SideBarItem key={username} username={username} />
                 )}

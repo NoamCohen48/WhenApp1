@@ -1,6 +1,8 @@
 .dialog-screen .bot-bar {
   height: 10%;
   background-color: #8bc6ca;
+  padding: 5px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
