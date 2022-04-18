@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useRenderContext } from '../../../Contexts/RenderContextProvider';
 import { useUserContext } from '../../../Contexts/UserContextProvider';
 import DialogScreen from '../DialogScreen/DialogScreen.js';
@@ -6,18 +7,21 @@ import './ChatScreen.css';
 
 function ChatScreen(props) {
     const userContext = useUserContext()
-    let {  } = useRenderContext();
+    let { } = useRenderContext();
+
+    const navigate = useNavigate();
 
     // TODO: find a solution for fetching contacts, 
     // now doing it here, putting in context and extracting in side bar
     // Need a way to tell this parent that side bar is loading. 
 
     if (userContext.curUser === undefined) {
-        return (
-            <div className='container-lg chat-container c-shadow'>
-                <img className='loading' src='https://media1.giphy.com/media/o0vwzuFwCGAFO/giphy.gif?cid=790b761134e48271ad5c493da81e35ff316e9569c83fa42c&rid=giphy.gif&ct=g' alt='' />;
-            </div>
-        )
+        return <Navigate to="/" replace={true} />
+        // return (
+        //     <div className='container-lg chat-container c-shadow'>
+        //         <img className='loading' src='https://media1.giphy.com/media/o0vwzuFwCGAFO/giphy.gif?cid=790b761134e48271ad5c493da81e35ff316e9569c83fa42c&rid=giphy.gif&ct=g' alt='' />;
+        //     </div>
+        // )
     }
 
     return (
