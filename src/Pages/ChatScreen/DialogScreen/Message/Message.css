@@ -1,8 +1,8 @@
 .dialog-screen .messages-conteiner {
   width: 100%;
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
-  height: 77%;
   background-color: lightgray;
   overflow-y: auto;
 

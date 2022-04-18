@@ -1,12 +1,10 @@
 .chat-container {
   position: relative;
-  /* width: 75vw; */
   height: 80vh;
   margin: 10vh auto auto;
   padding: 0;
 
   background-color: #558cb3b2;
-  /* border-radius: 5px; */
 }
 
 .chat-container .row {
@@ -15,18 +13,7 @@
   margin: 0%;
 }
 
-.dialog-screen {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-
-  border-left-style: solid;
-  border-left-color: rgba(47, 45, 45, 0.49);
-  border-left-width: 3px;
-}
-
 .chat-container .loading {
   width: 100%;
   height: 100%;
-  /* border-radius: 4px; */
 }
