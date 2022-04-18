@@ -78,7 +78,18 @@
 
 .input {
   font-size: 17px;
+  margin-top: 2px;
+  margin-right: 2px;
+  height: 42px;
 }
+
+.buttom {
+  margin-top: 2px;
+  font-size: 20px;
+  height: 42px;
+
+}
+
 @keyframes inOut {
   from {
     transform: scale(0.2);

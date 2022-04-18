@@ -69,7 +69,7 @@ function InputBar(props) {
 
     return (
         <>
-            <i className="bi bi-image" onClick={(event) => { uploudButtonImg.current.click(event) }}></i>
+            <i className="bi bi-image buttom" onClick={(event) => { uploudButtonImg.current.click(event) }}></i>
             <i className="bi bi-camera-video" onClick={(event) => { uploudButtonVideo.current.click(event) }}></i>
             <div className={`recorder text-center ${isRecording ? ' recording' : ''}`} ref={recorderBtn} onClick={micClick}>
                 <i className="bi bi-mic" disabled={isRecording} ></i>
@@ -80,7 +80,7 @@ function InputBar(props) {
 
             <div className="input-group">
                 <input type="text" className="form-control input" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
-                <span className="input-group-text" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
+                <span className="input-group-text buttom" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
             </div>
 
             <input className="file-upload hidden" type="file" accept="image/*" ref={uploudButtonImg} onChange={handleChangeImg}></input>
