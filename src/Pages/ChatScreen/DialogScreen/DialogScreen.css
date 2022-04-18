@@ -9,12 +9,14 @@
 
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: auto;
 }
 
 /* TopBar */
 
 .dialog-screen .top-bar {
-  height: 13%;
+  height: 80px;
   display: flex;
   background-color: #8bc6ca;
   border-bottom: 3px solid rgb(75, 71, 71, 0.3);
