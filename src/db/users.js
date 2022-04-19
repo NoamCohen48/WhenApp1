@@ -20,11 +20,11 @@ export function registerPerson(username, nickname, password, img) {
     // }
 
     users_db.push({
-        'username': username,
-        'nickname': nickname,
-        'password': password,
-        'img': img,
-        'contacts': []
+        username,
+        nickname,
+        password,
+        img,
+        contacts: []
     });
 
     addUserMessages(username)   

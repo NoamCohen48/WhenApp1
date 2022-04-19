@@ -13,12 +13,14 @@ export function UserContextProvider(props) {
     useEffect(() => {
         let usernameStorage = localStorage.getItem('username');
         if (!usernameStorage) {
+            setCurUser(undefined)
             return;
         }
 
         let user = findPerson({ username: usernameStorage })[0];
 
         if (!user) {
+            setCurUser(undefined)
             return
         }
 

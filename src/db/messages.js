@@ -8,11 +8,11 @@ export function addUserMessages(contact) {
 export function addMessage(contact, iSent, type, data, date) {
     let id = messages_db.get(contact).length;
     messages_db.get(contact).push({
-        'iSent': iSent,
-        'type': type,
-        'data': data,
-        'date': date,
-        'id': id
+        iSent,
+        type,
+        data,
+        date,
+        id
     });
 }
 
