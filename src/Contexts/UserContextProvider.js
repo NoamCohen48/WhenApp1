@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { findPerson } from '../db/users';
+import { addMessage, resetMessages } from '../db/messages';
+import { addContact, findPerson, resetUsers } from '../db/users';
 
 const UserContext = createContext();
 

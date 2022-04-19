@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useUserContext } from '../../../Contexts/UserContextProvider.js';
+import { addMessage, reset, resetMessages } from '../../../db/messages.js';
 import AddContact from './AddContact';
 import './SideBar.css';
 import SideBarItem from './SideBarItem.js';
@@ -15,6 +16,39 @@ function SideBar(props) {
             return prev.concat(username);
         })
     }
+
+    useEffect(() => {
+        console.log(contacts)
+        setContacts([])
+        resetMessages();
+
+        if (user.username === 'admin') {
+            setContacts((prev) => {
+                return prev.concat('mike', 'jhon', 'world');
+            })
+
+            addMessage("mike", true, "text", "hello there mike?", new Date());
+            addMessage("mike", false, "text", "yeah", new Date());
+            addMessage("jhon", true, "text", "bla", new Date());
+        }
+
+        console.log('reseted', contacts)
+
+
+    }, [userContext.curUser])
+
+    // useEffect(() => {
+    //     if (user.username === 'admin') {
+    //         setContacts((prev) => {
+    //             return prev.concat('mike', 'jhon', 'world');
+    //         })
+
+    //         addMessage("mike", true, "text", "hello there mike?", new Date());
+    //         addMessage("mike", false, "text", "yeah", new Date());
+    //         addMessage("jhon", true, "text", "bla", new Date());
+    //     }
+    // }, [])
+
 
     /*
     TODO:
@@ -42,7 +76,7 @@ function SideBar(props) {
                     <p>{user.username}</p>
                 </div>
                 <i className="bi bi-person-plus" data-bs-toggle="modal" data-bs-target="#AddContactModal" />
-                <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" contacts={contacts} addContact={addContact}/>
+                <AddContact id="AddContactModal" tabindex="-1" aria_labelledby="AddContactModalLabel" aria_hidden="true" contacts={contacts} addContact={addContact} />
             </div>
             <div className='contacts-list scroll--simple list-group'>
                 {contacts.map(username =>
