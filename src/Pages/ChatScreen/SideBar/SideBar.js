@@ -18,7 +18,6 @@ function SideBar(props) {
     }
 
     useEffect(() => {
-        console.log(contacts)
         setContacts([])
         resetMessages();
 
@@ -31,9 +30,6 @@ function SideBar(props) {
             addMessage("mike", false, "text", "yeah", new Date());
             addMessage("jhon", true, "text", "bla", new Date());
         }
-
-        console.log('reseted', contacts)
-
 
     }, [userContext.curUser])
 
