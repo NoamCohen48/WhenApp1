@@ -135,12 +135,9 @@
   border-color: var(--btn-br-color);
 }
 
-.login-container button:current,
-.login-container button:hover,
-.login-container button:focus,
-.login-container button:active {
-  -webkit-box-shadow: 0px 0px 16px 6px rgba(9, 60, 56, 0.3);
-  box-shadow: 0px 0px 16px 6px rgba(9, 60, 56, 0.3);
+.login-container button:focus {
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .login-container p:not(.error) {
