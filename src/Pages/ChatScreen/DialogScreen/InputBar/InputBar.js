@@ -39,6 +39,7 @@ function InputBar(props) {
     function handleChangeImg(event) {
         let file = URL.createObjectURL(event.target.files[0]);
         addMessage(chatContext.curChat.username, true, 'img', file, new Date());
+        uploudButtonImg.current.value = null;
         forceUpdate()
         // props.update();
     }
@@ -55,6 +56,7 @@ function InputBar(props) {
     function handleChangeVideo(event) {
         let file = URL.createObjectURL(event.target.files[0]);
         addMessage(chatContext.curChat.username, true, 'video', file, new Date());
+        uploudButtonVideo.current.value = null;
         forceUpdate()
     }
 
