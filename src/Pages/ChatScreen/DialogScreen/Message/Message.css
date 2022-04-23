@@ -21,9 +21,15 @@
   border-style: solid;
   margin: 10px;
   max-width: 60%;
+  max-height: 250px;
   overflow-wrap: anywhere;
   margin: 5px;
   padding: 7px;
+}
+
+.message > * {
+  max-height: 90%;
+  max-width: 100%;
 }
 
 .message > * {
@@ -48,6 +54,6 @@
   align-self: flex-end;
 }
 
-.message .date {
+.message > .date {
   font-size: 70%;
 }

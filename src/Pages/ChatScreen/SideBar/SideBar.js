@@ -26,9 +26,22 @@ function SideBar(props) {
                 return prev.concat('mike', 'jhon', 'world');
             })
 
-            addMessage("mike", true, "text", "hello there mike?", new Date());
-            addMessage("mike", false, "text", "yeah", new Date());
-            addMessage("jhon", true, "text", "bla", new Date());
+            addMessage("mike", false, "text", "hello there", new Date());
+            addMessage("mike", true, "text", "general kenobi", new Date());
+            addMessage("mike", false, "img", "https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1559596346/content-items/003/031/416/mike_wazowski_Mesa_de_trabajo_1-original.jpg?1559596346", new Date());
+            addMessage("mike", true, "text", "lol", new Date());
+
+            addMessage("jhon", false, "text", "sup admin?", new Date());
+            addMessage("jhon", true, "text", "im good how are you", new Date());
+            addMessage("jhon", false, "text", "you know", new Date());
+            addMessage("jhon", true, "text", ":)", new Date());
+
+            addMessage("world", false, "text", "look", new Date());
+            addMessage("world", false, "video", "/resources/video.mp4", new Date());
+            addMessage("world", true, "text", "nice", new Date());
+            addMessage("world", true, "text", "hear this", new Date());
+            addMessage("world", true, "audio", "/resources/audio.mp3", new Date());
+            addMessage("world", false, "text", "nostalgic", new Date());
         }
 
     }, [userContext.curUser])
