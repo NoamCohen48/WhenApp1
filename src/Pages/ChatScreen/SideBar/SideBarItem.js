@@ -45,7 +45,7 @@ function SideBarItem(props) {
         const date = lastMessage.date;
         const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
         const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-        dateStr = `${hour}:${minutes}, ${day}/${month}/${year}`;
+        dateStr = `${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}, ${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`;
     }
 
     /*

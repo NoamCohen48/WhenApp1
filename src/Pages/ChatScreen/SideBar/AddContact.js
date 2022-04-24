@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useUserContext } from '../../../Contexts/UserContextProvider.js';
 import { findPerson } from '../../../db/users.js';
 
-function AddContact(props) {
+function  AddContact(props) {
     const userContext = useUserContext()
 
     const usernameInput = useRef(undefined)

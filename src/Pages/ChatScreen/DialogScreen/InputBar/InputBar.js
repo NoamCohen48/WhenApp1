@@ -77,9 +77,7 @@ function InputBar(props) {
                 <i className="bi bi-mic" disabled={isRecording} ></i>
                 <i className="bi bi-record-fill" disabled={!isRecording}></i>
             </div>
-
-            {/* <audio src={audioURL} controls /> */}
-
+            
             <div className="input-group">
                 <input type="text" className="form-control input" onKeyDown={onKeyPress} placeholder="Enter Message" aria-label="Recipient's username" aria-describedby="basic-addon2" ref={inputText} />
                 <span className="input-group-text buttom" id="basic-addon2" onClick={sendMessage}><i className="bi bi-send"></i></span>
