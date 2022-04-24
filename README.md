@@ -25,6 +25,7 @@ this site was created by noam and shaked cohen.
 1. clone repo
 2. install dependencies using `npm i`
 3. run site using `npm start`
+4. open `http://localhost:3000/` with a browser
 
 ### Dependencies
 this site uses:
