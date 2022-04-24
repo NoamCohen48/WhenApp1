@@ -19,7 +19,7 @@ we have created a site "inspired" by WhatsApp for multi platform communication.
 5. great design.
 
 ### Creators
-this site was created by noam and shaked cohen.
+this site was created by noam cohen and shaked cohen.
 
 ## How To Run
 1. clone repo
