@@ -1,4 +1,4 @@
-# WhennApp
+# WhenApp
 we have created a site "inspired" by WhatsApp for multi platform communication.
 
 ### Preview
