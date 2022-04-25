@@ -30,5 +30,5 @@ this site was created by noam cohen and shaked cohen.
 ### Dependencies
 this site uses:
 - react
-- react router
-- bootstrap
+- react router - `react-router-dom`
+- bootstrap - using cdn
