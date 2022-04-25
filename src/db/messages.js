@@ -6,7 +6,6 @@ export function addUserMessages(contact) {
 }
 
 export function addMessage(contact, iSent, type, data, date) {
-    console.log(messages_db)
     let id = messages_db.get(contact).length;
     messages_db.get(contact).push({
         iSent,
