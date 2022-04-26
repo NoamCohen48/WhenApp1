@@ -23,7 +23,7 @@ function SideBar(props) {
 
         if (user.username === 'admin') {
             setContacts((prev) => {
-                return prev.concat('mike', 'jhon', 'world');
+                return prev.concat('mike', 'jhon', 'world', 'otis', 'cat');
             })
 
             addMessage("mike", false, "text", "hello there", new Date());
@@ -42,6 +42,18 @@ function SideBar(props) {
             addMessage("world", true, "text", "hear this", new Date());
             addMessage("world", true, "audio", "/resources/audio.mp3", new Date());
             addMessage("world", false, "text", "nostalgic", new Date());
+
+            addMessage("otis", true, "img", "https://i.ytimg.com/vi/N_J-YOQbG0M/mqdefault.jpg", new Date());
+            addMessage("otis", true, "text", "know him?", new Date());
+            addMessage("otis", false, "text", "of course", new Date());
+            addMessage("otis", true, "text", "then tell me his name", new Date());
+            addMessage("otis", false, "text", "hmmmm", new Date());
+            addMessage("otis", false, "text", "sh*t", new Date());
+            addMessage("otis", true, "text", "lol", new Date());
+            addMessage("otis", false, "text", "bye", new Date());
+
+            addMessage("cat", true, "img", "https://www.idlememe.com/wp-content/uploads/2021/08/crying-cat-meme-idlememe-3.jpg", new Date());
+            addMessage("cat", false, "video", "/resources/cat.mp4", new Date());
         }
 
     }, [userContext.curUser])
