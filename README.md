@@ -13,6 +13,8 @@ we have created a site "inspired" by WhatsApp for multi platform communication.
     3. jhon
     4. world
     5. will
+    6. cat
+    7. otis
     - for all of them password is admin.
 3. supports registration and login.
 4. no server.
